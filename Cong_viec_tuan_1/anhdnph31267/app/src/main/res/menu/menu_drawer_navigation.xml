@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/itemHome"
+        android:icon="@drawable/home_icon"
+        android:title="Trang chủ" />
+    <item
+        android:id="@+id/itemStatisticalOut"
+        android:icon="@drawable/chart_icon"
+        android:title="Thống kê sản phẩm xuất kho" />
+
+    <item
+        android:id="@+id/itemStatisticalOdd"
+        android:icon="@drawable/chart_icon"
+        android:title="Thống kê sản phẩm tồn kho" />
+
+    <item
+        android:id="@+id/itemAddMember"
+        android:icon="@drawable/add_person_icon"
+        android:title="Thêm thủ kho" />
+
+    <group android:checkableBehavior="single">
+        <item android:title="Khác">
+            <menu>
+                <item
+                    android:id="@+id/itemLogout"
+                    android:icon="@drawable/logout_icon"
+                    android:title="Đăng xuất" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

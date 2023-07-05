@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#26C0C0C0"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Account Login"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtUsernameLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/custom_edittext"
+        android:drawableLeft="@drawable/username_icon"
+        android:drawablePadding="5dp"
+        android:hint="Username"
+        android:padding="13dp"
+        android:shadowColor="@color/white"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textColorHint="#9C9C9C"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/edtPasswordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_edittext"
+        android:drawableLeft="@drawable/password_icon"
+        android:drawablePadding="5dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="13dp"
+        android:shadowColor="@color/white"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textColorHint="#9C9C9C"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btnLoginSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/custom_button"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+
+</LinearLayout>
