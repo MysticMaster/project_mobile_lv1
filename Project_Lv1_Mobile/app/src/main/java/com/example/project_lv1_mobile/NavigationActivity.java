@@ -38,18 +38,12 @@ public class NavigationActivity extends AppCompatActivity {
     MemberDAO dao;
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     private final String TABLE_NAME = "MEMBER";
-
     private List<Member> memberList = new ArrayList<>();
-
     protected DrawerLayout drawerLayout;
-
     protected Toolbar tbBase;
-
     protected NavigationView navigationView;
-
     protected Intent intent;
     protected Bundle bundle;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
