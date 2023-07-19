@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ACA7A7">
+    android:background="#D5D2D2">
 
         <TextView
             android:layout_width="match_parent"
@@ -12,7 +12,8 @@
             android:gravity="center"
             android:text="Đã Xuất Phiếu"
             android:textSize="26dp"
-            android:layout_margin="20dp"
+            android:background="#FFE9E9"
+            android:padding="5dp"
             android:textStyle="bold"
             android:textColor="#000000"/>
     <LinearLayout
@@ -29,10 +30,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Người xuất: "
+                android:textColor="#000000"
                 android:textSize="20dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
@@ -43,12 +46,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="Loại Sản Phẩm: "
                 android:textSize="20dp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
         </LinearLayout>
@@ -62,26 +67,11 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_loai_san_pham"
                 android:layout_margin="12dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mã Loại: "
-                    android:textSize="20dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="18dp"
                 android:padding="5dp"
                 android:orientation="horizontal"
                 android:layout_marginLeft="70dp">
@@ -89,10 +79,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tên Loại: "
+                    android:textColor="#000000"
                     android:textSize="20dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:textSize="20dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -106,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sản Phẩm: "
+                android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
             <TextView
@@ -124,20 +117,24 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_san_pham"
                 android:layout_margin="12dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
                 android:padding="5dp"
                 android:orientation="horizontal"
                 android:layout_marginLeft="70dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mã Sản Phẩm: "
+                    android:textColor="#000000"
+                    android:text="Tên Sản Phẩm: "
                     android:textSize="20dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:textSize="20dp"/>
             </LinearLayout>
             <LinearLayout
@@ -150,11 +147,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tên Sản Phẩm: "
+                    android:textColor="#000000"
+                    android:text="Số Lượng: "
                     android:textSize="20dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:textSize="20dp"/>
             </LinearLayout>
             <LinearLayout
@@ -167,31 +166,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số Lượng: "
-                    android:textSize="20dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:padding="5dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:text="Giá: "
                     android:textSize="20dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#000000"
                     android:textSize="20dp"/>
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -203,12 +186,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="Ngày/Tháng/Năm: "
                 android:textSize="20dp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
@@ -221,12 +206,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="Thuế: "
                 android:textSize="23dp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
@@ -238,12 +225,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="Tổng Tiền : "
                 android:textSize="24dp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:textSize="20dp"/>
         </LinearLayout>
     </LinearLayout>
@@ -256,6 +245,7 @@
         android:textSize="20dp"
         android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:backgroundTint="#A6E4B1"/>
+        android:background="@drawable/custom_edittext"
+        android:backgroundTint="#D7F3B7"/>
 
 </LinearLayout>
