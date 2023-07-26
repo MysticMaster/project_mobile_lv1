@@ -5,22 +5,22 @@
 
     <item
         android:id="@+id/itemHome"
-        android:icon="@drawable/home_icon"
+        android:icon="@drawable/home"
         android:title="Trang chủ" />
     <item
         android:id="@+id/itemStatisticalOut"
-        android:icon="@drawable/chart_icon"
-        android:title="Thống kê sản phẩm xuất kho" />
+        android:icon="@drawable/history"
+        android:title="Lịch sử xuất hàng" />
 
     <item
         android:id="@+id/itemStatisticalOdd"
-        android:icon="@drawable/chart_icon"
-        android:title="Thống kê sản phẩm tồn kho" />
+        android:icon="@drawable/history"
+        android:title="Lịch sử nhập hàng" />
 
     <item
-        android:id="@+id/itemAddMember"
-        android:icon="@drawable/add_person_icon"
-        android:title="Thêm thủ kho" />
+        android:id="@+id/itemManageMember"
+        android:icon="@drawable/add_people_icon"
+        android:title="Quản lý nhân viên" />
 
     <group android:checkableBehavior="single">
         <item android:title="Khác">

@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="#4DC0C0C0"
+    android:orientation="vertical"
     android:paddingHorizontal="15dp"
     android:paddingVertical="10dp">
 
@@ -22,31 +22,49 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtIMUsername"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="true"
-        android:textColor="#CC000000"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtIntroLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:textAllCaps="true"
+            android:textColor="#E6000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtIntroFirtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="#E6000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/txtIMUFullname"
+        android:id="@+id/txtIntroRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:textColor="#E6000000"
-        android:textSize="18sp" />
+        android:textColor="#CC000000"
+        android:textSize="18sp"
+        android:textStyle="normal" />
 
     <TextView
-        android:id="@+id/txtIMUEmail"
+        android:id="@+id/txtIntroEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:textColor="#99000000"
-        android:textSize="15sp"
+        android:textSize="14sp"
         android:textStyle="italic" />
-
 
 </LinearLayout>

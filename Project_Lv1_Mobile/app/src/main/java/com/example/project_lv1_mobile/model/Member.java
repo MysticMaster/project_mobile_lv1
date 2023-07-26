@@ -4,19 +4,20 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class Member implements Serializable {
-    private String idMember, fullName, userName, passWord, gender, email;
+    private String idMember, idAccount, firtName, lastName, email, gender, imageMember;
     private int rank, status;
 
     public Member() {
     }
 
-    public Member(String idMember, String fullName, String userName, String passWord, String gender, String email, int rank, int status) {
+    public Member(String idMember, String idAccount, String firtName, String lastName, String email, String gender, String imageMember, int rank, int status) {
         this.idMember = idMember;
-        this.fullName = fullName;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.gender = gender;
+        this.idAccount = idAccount;
+        this.firtName = firtName;
+        this.lastName = lastName;
         this.email = email;
+        this.gender = gender;
+        this.imageMember = imageMember;
         this.rank = rank;
         this.status = status;
     }
@@ -30,30 +31,39 @@ public class Member implements Serializable {
         return this;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getIdAccount() {
+        return idAccount;
     }
 
-    public Member setFullName(String fullName) {
-        this.fullName = fullName;
+    public Member setIdAccount(String idAccount) {
+        this.idAccount = idAccount;
         return this;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getFirtName() {
+        return firtName;
     }
 
-    public Member setUserName(String userName) {
-        this.userName = userName;
+    public Member setFirtName(String firtName) {
+        this.firtName = firtName;
         return this;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getLastName() {
+        return lastName;
     }
 
-    public Member setPassWord(String passWord) {
-        this.passWord = passWord;
+    public Member setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Member setEmail(String email) {
+        this.email = email;
         return this;
     }
 
@@ -66,12 +76,12 @@ public class Member implements Serializable {
         return this;
     }
 
-    public String getEmail() {
-        return email;
+    public String getImageMember() {
+        return imageMember;
     }
 
-    public Member setEmail(String email) {
-        this.email = email;
+    public Member setImageMember(String imageMember) {
+        this.imageMember = imageMember;
         return this;
     }
 
@@ -96,11 +106,12 @@ public class Member implements Serializable {
     public HashMap<String, Object> objectMember() {
         HashMap<String, Object> data = new HashMap<>();
         data.put("idMember", this.idMember);
-        data.put("fullName", this.fullName);
-        data.put("userName", this.userName);
-        data.put("passWord", this.passWord);
-        data.put("gender", this.gender);
+        data.put("idAccount", this.idAccount);
+        data.put("firtName", this.firtName);
+        data.put("lastName", this.lastName);
         data.put("email", this.email);
+        data.put("gender", this.gender);
+        data.put("imageMember", this.imageMember);
         data.put("rank", this.rank);
         data.put("status", this.status);
 
