@@ -18,13 +18,13 @@ public class CustomQuantityPicker extends LinearLayout {
 
     private TextView txtAddition, txtSubtraction;
     private EditText edtQuantity;
-    private int maxQuantity;
 
     private TextView txtSetQuantity;
 
     private OnQuantityChangeListener onQuantityChangeListener;
 
     private int quantity = 0;
+    private int maxQuantity;
 
     public CustomQuantityPicker(Context context) {
         super(context);
@@ -33,6 +33,15 @@ public class CustomQuantityPicker extends LinearLayout {
     public CustomQuantityPicker(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
+    }
+
+    public int getMaxQuantity() {
+        return maxQuantity;
+    }
+
+    public CustomQuantityPicker setMaxQuantity(int maxQuantity) {
+        this.maxQuantity = maxQuantity;
+        return this;
     }
 
     private void init(Context context) {
@@ -73,14 +82,7 @@ public class CustomQuantityPicker extends LinearLayout {
             public void afterTextChanged(Editable s) {
                 try {
                     // Cập nhật giá trị số lượng với giá trị mới từ EditText
-                    int number = Integer.parseInt(s.toString());
-
-                    if (number > maxQuantity){
-                        quantity = maxQuantity;
-                        edtQuantity.setText(String.valueOf(maxQuantity));
-                    }else {
-                        quantity = number;
-                    }
+                    quantity = Integer.parseInt(s.toString());
                 } catch (NumberFormatException e) {
                     // Nếu có lỗi khi chuyển đổi số, sử dụng giá trị mặc định là 1
                     edtQuantity.setText("1");
@@ -100,17 +102,8 @@ public class CustomQuantityPicker extends LinearLayout {
         edtQuantity.setText(String.valueOf(quantity));
     }
 
-    public int getMaxQuantity() {
-        return maxQuantity;
-    }
-
-    public CustomQuantityPicker setMaxQuantity(int maxQuantity) {
-        this.maxQuantity = maxQuantity;
-        return this;
-    }
-
     private void increment() {
-        if (quantity < maxQuantity){
+        if (quantity < maxQuantity) {
             quantity++;
             edtQuantity.setText(String.valueOf(quantity));
             if (onQuantityChangeListener != null) {
@@ -163,15 +156,9 @@ public class CustomQuantityPicker extends LinearLayout {
                 public void afterTextChanged(Editable editable) {
                     try {
                         int newQuantity = Integer.parseInt(editable.toString());
-
-                        if (newQuantity > maxQuantity){
-                            txtSetQuantity.setText(String.valueOf(maxQuantity* price));
-                            txtQuantity.setText(String.valueOf(maxQuantity));
-                        }else {
-                            txtSetQuantity.setText(String.valueOf(newQuantity* price));
-                            txtQuantity.setText(String.valueOf(editable));
-                        }
-
+                        String s = String.valueOf(editable);
+                        txtSetQuantity.setText(String.valueOf(newQuantity * price));
+                        txtQuantity.setText(s);
                     } catch (NumberFormatException e) {
                         // Xử lý nếu có lỗi chuyển đổi số
                         txtSetQuantity.setText("1");
