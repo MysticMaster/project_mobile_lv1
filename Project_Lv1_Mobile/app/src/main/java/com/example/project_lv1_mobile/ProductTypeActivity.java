@@ -32,8 +32,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_lv1_mobile.adapter.ProductTypeAdapter;
-import com.example.project_lv1_mobile.dao.ProductTypeDAO;
-import com.example.project_lv1_mobile.model.Member;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.ProductType;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -64,8 +63,8 @@ public class ProductTypeActivity extends NavigationActivity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
     private StorageReference imageRef;
-    private ProductTypeDAO typeDAO;
-    private final String TABLE_NAME = "TYPE";
+    private FirebaseCRUD crud;
+    private final String COLLECTION_TYPE = "TYPE";
 
     private FloatingActionButton floatBtnAddType;
     private RecyclerView recyclerType;
@@ -82,7 +81,8 @@ public class ProductTypeActivity extends NavigationActivity {
         LayoutInflater.from(this).inflate(R.layout.activity_product_type, findViewById(R.id.flBase), true);
 
         flBase.setVisibility(View.VISIBLE);
-        llContainerHome.setVisibility(View.GONE);
+        frameBottomView.setVisibility(View.GONE);
+        bottomNavigationViewBase.setVisibility(View.GONE);
         setToolbarTitle("Quản Lý Loại Sản Phẩm");
 
         String idMember = bundle.getString("idMember");
@@ -98,7 +98,7 @@ public class ProductTypeActivity extends NavigationActivity {
         storageReference = storage.getReference();
         imageRef = storageReference.child("imagesType/" + UUID.randomUUID().toString());
 
-        typeDAO = new ProductTypeDAO(firestore, context);
+        crud = new FirebaseCRUD(firestore, context);
 
         listenFirebaseType();
 
@@ -122,18 +122,14 @@ public class ProductTypeActivity extends NavigationActivity {
         LinearLayoutManager manager = new LinearLayoutManager(context);
         recyclerType.setLayoutManager(manager);
 
-        adapter = new ProductTypeAdapter(context, productTypeList, typeDAO, idMember);
+        adapter = new ProductTypeAdapter(context, productTypeList, crud, idMember);
         recyclerType.setAdapter(adapter);
 
-        DocumentReference reference = FirebaseFirestore.getInstance().collection(collectionMember).document(idMember);
-        reference.get().addOnCompleteListener(task -> {
-            DocumentSnapshot snapshot = task.getResult();
-            member = snapshot.toObject(Member.class);
 
-            if (member.getRank() != 0) {
-                floatBtnAddType.setVisibility(View.GONE);
-            }
-        });
+        if (rank != 0) {
+            floatBtnAddType.setVisibility(View.GONE);
+        }
+
 
         floatBtnAddType.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +148,7 @@ public class ProductTypeActivity extends NavigationActivity {
     }
 
     private void listenFirebaseType() {
-        firestore.collection(TABLE_NAME).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        firestore.collection(COLLECTION_TYPE).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -235,7 +231,7 @@ public class ProductTypeActivity extends NavigationActivity {
                                 String imageType = uri.toString();
 
                                 ProductType type = new ProductType(idType, typeName, imageType);
-                                typeDAO.addProductType(type);
+                                crud.addProductType(type);
                                 adapter.notifyDataSetChanged();
                                 dialog.dismiss();
                             }

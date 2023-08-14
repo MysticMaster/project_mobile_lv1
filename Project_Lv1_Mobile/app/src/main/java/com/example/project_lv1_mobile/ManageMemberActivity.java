@@ -35,9 +35,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project_lv1_mobile.adapter.MemberAdapter;
-import com.example.project_lv1_mobile.dao.MemberDAO;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.Member;
-import com.example.project_lv1_mobile.model.ProductType;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -72,9 +71,9 @@ public class ManageMemberActivity extends NavigationActivity {
     private FirebaseAuth auth;
     private StorageReference storageReference;
     private StorageReference imageRef;
-    private MemberDAO memberDAO;
+    private FirebaseCRUD crud;
 
-    private final String TABLE_NAME = "MEMBER";
+    private final String COLLECTION_MEMBER = "MEMBER";
 
     private FloatingActionButton floatBtnAddMember;
     private RecyclerView recyclerMember;
@@ -91,7 +90,8 @@ public class ManageMemberActivity extends NavigationActivity {
         LayoutInflater.from(this).inflate(R.layout.activity_manage_member, findViewById(R.id.flBase), true);
 
         flBase.setVisibility(View.VISIBLE);
-        llContainerHome.setVisibility(View.GONE);
+        frameBottomView.setVisibility(View.GONE);
+        bottomNavigationViewBase.setVisibility(View.GONE);
         setToolbarTitle("Quản Lý Nhân Viên");
 
         context = ManageMemberActivity.this;
@@ -106,7 +106,7 @@ public class ManageMemberActivity extends NavigationActivity {
         storageReference = storage.getReference();
         imageRef = storageReference.child("imagesMember/" + UUID.randomUUID().toString());
 
-        memberDAO = new MemberDAO(firestore, context);
+        crud = new FirebaseCRUD(firestore, context);
 
         listenFirebaseMember();
 
@@ -130,7 +130,7 @@ public class ManageMemberActivity extends NavigationActivity {
         LinearLayoutManager manager = new LinearLayoutManager(context);
         recyclerMember.setLayoutManager(manager);
 
-        adapter = new MemberAdapter(context, memberList, memberDAO, imageMemberLauncher);
+        adapter = new MemberAdapter(context, memberList, crud);
 
         recyclerMember.setAdapter(adapter);
 
@@ -146,7 +146,7 @@ public class ManageMemberActivity extends NavigationActivity {
     }
 
     private void listenFirebaseMember() {
-        firestore.collection(TABLE_NAME).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        firestore.collection(COLLECTION_MEMBER).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -361,7 +361,7 @@ public class ManageMemberActivity extends NavigationActivity {
 
                             Member newMember = new Member(idMember, idAccount, ten, ho, email, gioiTinh, imageMember, 1, 0);
 
-                            memberDAO.addMember(newMember);
+                            crud.addMember(newMember);
                             dialogAddMember.dismiss();
                         } else {
                             UploadTask uploadTask = imageRef.putFile(imageUri);
@@ -377,7 +377,7 @@ public class ManageMemberActivity extends NavigationActivity {
 
                                             Member newMember = new Member(idMember, idAccount, ten, ho, email, gioiTinh, imageMember, 1, 0);
 
-                                            memberDAO.addMember(newMember);
+                                            crud.addMember(newMember);
                                             dialogAddMember.dismiss();
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {

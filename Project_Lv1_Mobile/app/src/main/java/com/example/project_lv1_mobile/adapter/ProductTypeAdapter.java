@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.project_lv1_mobile.R;
-import com.example.project_lv1_mobile.dao.ProductTypeDAO;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.Member;
 import com.example.project_lv1_mobile.model.Product;
 import com.example.project_lv1_mobile.model.ProductType;
@@ -33,13 +33,13 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
 
     private final Context context;
     private List<ProductType> productTypeList;
-    private final ProductTypeDAO typeDAO;
+    private final FirebaseCRUD crud;
     private String idMember;
 
-    public ProductTypeAdapter(Context context, List<ProductType> productTypeList, ProductTypeDAO typeDAO, String idMember) {
+    public ProductTypeAdapter(Context context, List<ProductType> productTypeList, FirebaseCRUD crud, String idMember) {
         this.context = context;
         this.productTypeList = productTypeList;
-        this.typeDAO = typeDAO;
+        this.crud = crud;
         this.idMember = idMember;
     }
 
@@ -56,9 +56,6 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
         holder.txtNameType.setText(productTypeList.get(position).getNameProductType());
 
         Glide.with(context).load(productTypeList.get(position).getTypeImageUri()).into(holder.ivImageType);
-
-        ProductType productType = productTypeList.get(position);
-
 
     }
 
@@ -77,20 +74,12 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
             txtNameType = itemView.findViewById(R.id.txtNameType);
             ivImageType = itemView.findViewById(R.id.ivImageType);
 
-            DocumentReference reference = FirebaseFirestore.getInstance().collection("MEMBER").document(idMember);
-            reference.get().addOnCompleteListener(task -> {
-                DocumentSnapshot snapshot = task.getResult();
-                Member member = snapshot.toObject(Member.class);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ProductType productType = productTypeList.get(getAdapterPosition());
 
-                if (member.getRank() == 0) {
-                    itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            ProductType productType = productTypeList.get(getAdapterPosition());
-
-                            openDialogUpdateProduct(productType);
-                        }
-                    });
+                    openDialogUpdateProduct(productType);
                 }
             });
         }
@@ -128,7 +117,7 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
                 String name = edtUpdateTypeName.getText().toString();
                 productType.setNameProductType(name);
 
-                typeDAO.updateType(productType);
+                crud.updateType(productType);
                 notifyDataSetChanged();
                 dialogDialogUp.dismiss();
             }

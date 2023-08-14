@@ -1,4 +1,4 @@
-package com.example.project_lv1_mobile;
+package com.example.project_lv1_mobile.fragment;
 
 import static android.content.ContentValues.TAG;
 
@@ -17,8 +17,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.project_lv1_mobile.R;
 import com.example.project_lv1_mobile.adapter.ProductAdapter;
-import com.example.project_lv1_mobile.dao.ProductDAO;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.Product;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,18 +32,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FragmentNgungKinhDoanh extends Fragment {
+public class FragmentAllProduct extends Fragment {
 
-    public String idMember;
     private Context context;
     private List<Product> productList;
-    private ProductDAO productDAO;
-
     private FirebaseFirestore firestore;
     private ProductAdapter adapter;
-    private final String collectionProduct = "PRODUCT";
+    private final String COLLECTION_PRODUCT = "PRODUCT";
 
-    public FragmentNgungKinhDoanh() {
+    public FragmentAllProduct() {
         // Required empty public constructor
     }
 
@@ -61,27 +59,28 @@ public class FragmentNgungKinhDoanh extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_ngung_kinh_doanh, container, false);
-        RecyclerView recyclerNgungKinhDoanh = rootView.findViewById(R.id.recyclerNgungKinhDoanh);
+        View rootView = inflater.inflate(R.layout.fragment_all_product, container, false);
+        RecyclerView recyclerAllProduct = rootView.findViewById(R.id.recyclerAllProduct);
 
         productList = new ArrayList<>();
         firestore = FirebaseFirestore.getInstance();
-        productDAO = new ProductDAO(firestore, context);
+
+        Bundle bundle = getArguments();
 
         listenFirebaseProduct();
 
-        adapter = new ProductAdapter(context, productList, productDAO, idMember);
+        adapter = new ProductAdapter(context, productList, bundle);
 
         LinearLayoutManager manager = new LinearLayoutManager(context);
-        recyclerNgungKinhDoanh.setLayoutManager(manager);
+        recyclerAllProduct.setLayoutManager(manager);
 
-        recyclerNgungKinhDoanh.setAdapter(adapter);
+        recyclerAllProduct.setAdapter(adapter);
 
         return rootView;
     }
 
     private void listenFirebaseProduct() {
-        firestore.collection(collectionProduct).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        firestore.collection(COLLECTION_PRODUCT).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -95,9 +94,7 @@ public class FragmentNgungKinhDoanh extends Fragment {
                                 productList.clear();
                                 for (DocumentSnapshot snapshot : value.getDocuments()) {
                                     Product product = snapshot.toObject(Product.class);
-                                    if (product.getStatus() == 1) {
-                                        productList.add(product);
-                                    }
+                                    productList.add(product);
                                 }
                                 adapter.notifyDataSetChanged();
                                 break;

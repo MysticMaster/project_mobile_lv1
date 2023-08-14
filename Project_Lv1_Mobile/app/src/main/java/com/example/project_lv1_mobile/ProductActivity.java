@@ -8,15 +8,11 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,18 +25,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.project_lv1_mobile.adapter.ProductTypeAdapter;
 import com.example.project_lv1_mobile.adapter.SpinnerTypeAdapter;
-import com.example.project_lv1_mobile.dao.ProductDAO;
-import com.example.project_lv1_mobile.dao.ProductTypeDAO;
-import com.example.project_lv1_mobile.model.Member;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
+import com.example.project_lv1_mobile.fragment.FragmentAllProduct;
+import com.example.project_lv1_mobile.fragment.FragmentKinhDoanh;
+import com.example.project_lv1_mobile.fragment.FragmentNgungKinhDoanh;
 import com.example.project_lv1_mobile.model.Product;
 import com.example.project_lv1_mobile.model.ProductType;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -48,7 +43,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -69,10 +63,10 @@ public class ProductActivity extends NavigationActivity {
     private List<ProductType> productTypeList;
     private SpinnerTypeAdapter spinnerTypeAdapter;
     private List<Product> productList;
-    private ProductDAO productDAO;
+    private FirebaseCRUD crud;
 
     //  Firebase
-    private final String collectionType = "TYPE";
+    private final String COLLECTION_TYPE = "TYPE";
     private FirebaseFirestore firestore;
     private FirebaseStorage storage;
     private StorageReference storageReference;
@@ -99,10 +93,9 @@ public class ProductActivity extends NavigationActivity {
         LayoutInflater.from(this).inflate(R.layout.activity_product, findViewById(R.id.flBase), true);
 
         flBase.setVisibility(View.VISIBLE);
-        llContainerHome.setVisibility(View.GONE);
+        frameBottomView.setVisibility(View.GONE);
+        bottomNavigationViewBase.setVisibility(View.GONE);
         setToolbarTitle("Quản Lý Sản Phẩm");
-
-        String idMember = bundle.getString("idMember");
 
         context = ProductActivity.this;
         productList = new ArrayList<>();
@@ -116,7 +109,7 @@ public class ProductActivity extends NavigationActivity {
         storageReference = storage.getReference();
         imageRef = storageReference.child("imagesProduct/" + UUID.randomUUID().toString());
 
-        productDAO = new ProductDAO(firestore, context);
+        crud = new FirebaseCRUD(firestore, context);
 
         imageProductLauncher = registerForActivityResult(
                 new ActivityResultContracts.GetContent(),
@@ -141,29 +134,19 @@ public class ProductActivity extends NavigationActivity {
 
                 if (item.getItemId() == R.id.itemKinhDoanh) {
                     FragmentKinhDoanh kinhDoanh = new FragmentKinhDoanh();
-                    kinhDoanh.idMember = idMember;
+                    kinhDoanh.setArguments(bundle);
                     rePlaceFrag(kinhDoanh);
                 } else if (item.getItemId() == R.id.itemNgungKinhDoanh) {
                     FragmentNgungKinhDoanh ngungKinhDoanh = new FragmentNgungKinhDoanh();
-                    ngungKinhDoanh.idMember = idMember;
+                    ngungKinhDoanh.setArguments(bundle);
                     rePlaceFrag(ngungKinhDoanh);
                 } else if (item.getItemId() == R.id.itemTatCa) {
                     FragmentAllProduct allProduct = new FragmentAllProduct();
-                    allProduct.idMember = idMember;
+                    allProduct.setArguments(bundle);
                     rePlaceFrag(allProduct);
                 }
 
                 return false;
-            }
-        });
-
-        DocumentReference reference = FirebaseFirestore.getInstance().collection(collectionMember).document(idMember);
-        reference.get().addOnCompleteListener(task -> {
-            DocumentSnapshot snapshot = task.getResult();
-            member = snapshot.toObject(Member.class);
-
-            if (member.getRank() != 0) {
-                floatBtnAddProduct.setVisibility(View.GONE);
             }
         });
 
@@ -186,7 +169,7 @@ public class ProductActivity extends NavigationActivity {
     }
 
     private void listenFirebaseType() {
-        firestore.collection(collectionType).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        firestore.collection(COLLECTION_TYPE).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -240,9 +223,8 @@ public class ProductActivity extends NavigationActivity {
         progressBarAddProduct = view.findViewById(R.id.progressBarAddProduct);
         btnAddProductSub = view.findViewById(R.id.btnAddProductSub);
 
-        listenFirebaseType();
-
         spinnerTypeAdapter = new SpinnerTypeAdapter(context, productTypeList);
+        listenFirebaseType();
         spinnerType.setAdapter(spinnerTypeAdapter);
 
         ivAddImageProduct.setOnClickListener(new View.OnClickListener() {
@@ -307,7 +289,7 @@ public class ProductActivity extends NavigationActivity {
                                 String imageProduct = uri.toString();
 
                                 Product product = new Product(idSP, idType, tenSP, imageProduct, 0, gia, 0);
-                                productDAO.addProduct(product);
+                                crud.addProduct(product);
                                 dialog.dismiss();
                                 recreate();
                             }

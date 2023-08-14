@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/custom_layout"
-    android:orientation="horizontal"
     android:layout_marginVertical="2dp"
-    android:padding="2dp">
+    android:background="@drawable/custom_layout"
+    android:gravity="center_vertical"
+    android:paddingVertical="1dp">
 
     <ImageView
         android:id="@+id/ivImageProduct"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
+        android:layout_width="65dp"
+        android:layout_height="85dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:layout_marginRight="5dp"
-        android:padding="2dp"
         android:scaleType="fitXY" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/ivImageProduct"
         android:orientation="vertical">
 
         <LinearLayout
@@ -44,9 +47,11 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -66,7 +71,16 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/iBtnAddSPChon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="10dp"
+        android:background="#C0C0C0"
+        android:src="@drawable/add_icon" />
+
+</RelativeLayout>

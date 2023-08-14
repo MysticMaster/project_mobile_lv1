@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.project_lv1_mobile.R;
-import com.example.project_lv1_mobile.dao.MemberDAO;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.Member;
 
 import java.util.List;
@@ -28,15 +27,12 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
     private final Context context;
     private List<Member> memberList;
-    private final MemberDAO memberDAO;
+    private final FirebaseCRUD crud;
 
-    private ActivityResultLauncher<String> imageMemberLauncher;
-
-    public MemberAdapter(Context context, List<Member> memberList, MemberDAO memberDAO, ActivityResultLauncher<String> imageMemberLauncher) {
+    public MemberAdapter(Context context, List<Member> memberList, FirebaseCRUD crud) {
         this.context = context;
         this.memberList = memberList;
-        this.memberDAO = memberDAO;
-        this.imageMemberLauncher = imageMemberLauncher;
+        this.crud = crud;
     }
 
     @NonNull
@@ -63,7 +59,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtHo, txtTen, txtGioiTinh, txtEmailMember, txtTrangThai;
+        TextView txtHo, txtTen, txtTrangThai;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -135,7 +131,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         member.setStatus(1);
-                        memberDAO.updateMember(member);
+                        crud.updateMember(member);
 
                         notifyDataSetChanged();
                         Toast.makeText(context, "Đã vô hiệu hóa tài khoản", Toast.LENGTH_SHORT).show();
@@ -167,7 +163,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         member.setStatus(0);
-                        memberDAO.updateMember(member);
+                        crud.updateMember(member);
 
                         notifyDataSetChanged();
                         Toast.makeText(context, "Đã kích hoạt tài khoản", Toast.LENGTH_SHORT).show();

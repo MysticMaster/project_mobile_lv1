@@ -83,7 +83,7 @@ public class Product implements Serializable {
         return this;
     }
 
-    public HashMap<String, Object> objectType() {
+    public HashMap<String, Object> objectProduct() {
         HashMap<String, Object> data = new HashMap<>();
         data.put("idProduct", this.idProduct);
         data.put("idProductType", this.idProductType);

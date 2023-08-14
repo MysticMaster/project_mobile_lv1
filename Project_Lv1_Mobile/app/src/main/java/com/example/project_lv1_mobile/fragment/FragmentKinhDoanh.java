@@ -1,4 +1,4 @@
-package com.example.project_lv1_mobile;
+package com.example.project_lv1_mobile.fragment;
 
 import static android.content.ContentValues.TAG;
 
@@ -17,8 +17,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.project_lv1_mobile.R;
 import com.example.project_lv1_mobile.adapter.ProductAdapter;
-import com.example.project_lv1_mobile.dao.ProductDAO;
+import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.Product;
 import com.example.project_lv1_mobile.model.ProductType;
 import com.google.firebase.firestore.DocumentChange;
@@ -34,14 +35,13 @@ import java.util.List;
 
 public class FragmentKinhDoanh extends Fragment {
 
-    public String idMember;
     private Context context;
     private List<Product> productList;
-    private ProductDAO productDAO;
+    private FirebaseCRUD crud;
 
     private FirebaseFirestore firestore;
     private ProductAdapter adapter;
-    private final String collectionProduct = "PRODUCT";
+    private final String COLLECTION_PRODUCT = "PRODUCT";
 
     public FragmentKinhDoanh() {
         // Required empty public constructor
@@ -67,11 +67,13 @@ public class FragmentKinhDoanh extends Fragment {
 
         productList = new ArrayList<>();
         firestore = FirebaseFirestore.getInstance();
-        productDAO = new ProductDAO(firestore, context);
+        crud = new FirebaseCRUD(firestore, context);
+
+        Bundle bundle = getArguments();
 
         listenFirebaseProduct();
 
-        adapter = new ProductAdapter(context, productList, productDAO, idMember);
+        adapter = new ProductAdapter(context, productList, bundle);
 
         LinearLayoutManager manager = new LinearLayoutManager(context);
         recyclerKinhDoanh.setLayoutManager(manager);
@@ -82,39 +84,39 @@ public class FragmentKinhDoanh extends Fragment {
     }
 
     private void listenFirebaseProduct() {
-        firestore.collection(collectionProduct).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    Log.e(TAG, "Fail", error);
-                    return;
-                }
-                if (value != null) {
-                    for (DocumentChange documentChange : value.getDocumentChanges()) {
-                        switch (documentChange.getType()) {
-                            case ADDED: //  Khi chỉ có document được thêm
-                                productList.clear();
-                                for (DocumentSnapshot snapshot : value.getDocuments()) {
-                                    Product product = snapshot.toObject(Product.class);
-                                    if (product.getStatus() == 0) {
-                                        productList.add(product);
-                                    }
+        firestore.collection(COLLECTION_PRODUCT).whereEqualTo("status", 0)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e(TAG, "Fail", error);
+                            return;
+                        }
+
+                        if (value != null) {
+                            for (DocumentChange documentChange : value.getDocumentChanges()) {
+                                switch (documentChange.getType()) {
+                                    case ADDED: //  Khi chỉ có document được thêm
+                                        productList.clear();
+                                        for (DocumentSnapshot snapshot : value.getDocuments()) {
+                                            Product product = snapshot.toObject(Product.class);
+                                            productList.add(product);
+                                        }
+                                        adapter.notifyDataSetChanged();
+                                        break;
+                                    case MODIFIED:  //  Khi có 1 document được cập nhật
+                                        adapter.notifyDataSetChanged();
+                                        break;
+                                    case REMOVED:   // Khi có 1 document bị xóa khỏi collection
+                                        documentChange.getDocument().toObject(Product.class);
+                                        productList.remove(documentChange.getOldIndex());
+                                        adapter.notifyDataSetChanged();
+                                        break;
                                 }
-                                adapter.notifyDataSetChanged();
-                                break;
-                            case MODIFIED:  //  Khi có 1 document được cập nhật
-                                adapter.notifyDataSetChanged();
-                                break;
-                            case REMOVED:   // Khi có 1 document bị xóa khỏi collection
-                                documentChange.getDocument().toObject(Product.class);
-                                productList.remove(documentChange.getOldIndex());
-                                adapter.notifyDataSetChanged();
-                                break;
+                            }
                         }
                     }
-                }
-            }
-        });
+                });
     }
 
 }

@@ -1,7 +1,5 @@
 package com.example.project_lv1_mobile;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -11,19 +9,17 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
-import android.util.Log;
+
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.project_lv1_mobile.dao.MemberDAO;
 import com.example.project_lv1_mobile.model.Member;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -34,27 +30,23 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Context context;
     private FirebaseFirestore firestore;
     private FirebaseAuth auth;
-    private MemberDAO memberDAO;
-
-    private final String TABLE_NAME = "MEMBER";
-    private List<Member> memberList;
-
+    private final String COLLECTION_MEMBER = "MEMBER";
     private TextInputLayout txtILayoutEmailLogin, txtILayoutPassLogin;
     private TextInputEditText txtIEdtEmailLogin, txtIEdtPassLogin;
     private Button btnLoginSubmit;
@@ -68,8 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         context = LoginActivity.this;
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
-        memberDAO = new MemberDAO(firestore, context);
-        memberList = new ArrayList<>();
+
 
         txtILayoutEmailLogin = findViewById(R.id.txtILayoutEmailLogin);
         txtILayoutPassLogin = findViewById(R.id.txtILayoutPassLogin);
@@ -80,24 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         ProgressBar progressBarLogin = findViewById(R.id.progressBarLogin);
         btnLoginSubmit = findViewById(R.id.btnLoginSubmit);
         txtForgot = findViewById(R.id.txtForgot);
-
-
-        firestore.collection(TABLE_NAME).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    Log.e(TAG, "Read Fail", error);
-                    return;
-                }
-                if (value != null) {
-                    memberList.clear();
-                    for (DocumentSnapshot snapshot : value.getDocuments()) {
-                        Member member = snapshot.toObject(Member.class);
-                        memberList.add(member);
-                    }
-                }
-            }
-        });
 
 
         txtIEdtEmailLogin.setOnTouchListener(new View.OnTouchListener() {
@@ -182,31 +155,36 @@ public class LoginActivity extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<AuthResult> task) {
                                                 if (task.isSuccessful()) {
-                                                    Member getMember = null;
-
                                                     FirebaseUser getCurrentUser = auth.getCurrentUser();
                                                     String userId = getCurrentUser.getUid();
 
-                                                    for (int i = 0; i < memberList.size(); i++) {
-                                                        if (memberList.get(i).getIdAccount().equals(userId)) {
-                                                            getMember = memberList.get(i);
-                                                            break;
-                                                        }
-                                                    }
+                                                    firestore.collection(COLLECTION_MEMBER).whereEqualTo("idAccount", userId)
+                                                            .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                                    Member getMember = null;
+                                                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                                                        Member member = document.toObject(Member.class);
+                                                                        getMember = member;
+                                                                    }
 
-                                                    Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
-                                                    Bundle bundle = new Bundle();
-                                                    bundle.putString("idMember", getMember.getIdMember());
-                                                    intent.putExtras(bundle);
+                                                                    Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
+                                                                    Bundle bundle = new Bundle();
+                                                                    bundle.putString("idMember", getMember.getIdMember());
+                                                                    bundle.putInt("rank", getMember.getRank());
+                                                                    intent.putExtras(bundle);
 
-                                                    if (getMember.getStatus() == 1) {
-                                                        Toast.makeText(context, "Tài khoản của bạn đã bị vô hiệu hóa", Toast.LENGTH_SHORT).show();
-                                                        progressBarLogin.setVisibility(View.INVISIBLE);
-                                                        btnLoginSubmit.setVisibility(View.VISIBLE);
-                                                    } else {
-                                                        startActivity(intent);
-                                                        finish();
-                                                    }
+                                                                    if (getMember.getStatus() == 1) {
+                                                                        Toast.makeText(context, "Tài khoản của bạn đã bị vô hiệu hóa", Toast.LENGTH_SHORT).show();
+                                                                        progressBarLogin.setVisibility(View.INVISIBLE);
+                                                                        btnLoginSubmit.setVisibility(View.VISIBLE);
+                                                                    } else {
+                                                                        startActivity(intent);
+                                                                        finish();
+                                                                    }
+                                                                }
+                                                            });
+
                                                 } else {
                                                     progressBarLogin.setVisibility(View.INVISIBLE);
                                                     btnLoginSubmit.setVisibility(View.VISIBLE);
@@ -217,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
                             } else {
                                 progressBarLogin.setVisibility(View.INVISIBLE);
                                 btnLoginSubmit.setVisibility(View.VISIBLE);
-                                Toast.makeText(context, "Tài khoản không tồn tại, vui lòng đăng ký", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

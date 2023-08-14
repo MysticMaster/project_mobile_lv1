@@ -37,46 +37,58 @@
         android:textColorHint="#C0C0C0"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/txtFillStatusUp"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinnerTypeUp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        android:textStyle="bold" />
+        android:background="@color/white"
+        android:padding="10dp" />
+
+    <FrameLayout
+        android:id="@+id/frameTrangThaiSP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/txtNgungKinhDoanh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngừng Kinh Doanh"
+            android:textColor="#536DFE"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtKinhDoanh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kinh doanh"
+            android:textColor="#536DFE"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
 
-        <FrameLayout
+        <TextView
+            android:id="@+id/txtCancelUpProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true">
-
-            <TextView
-                android:id="@+id/txtNgungKinhDoanh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ngừng "
-                android:textColor="#536DFE"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtKinhDoanh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kinh doanh"
-                android:textColor="#536DFE"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </FrameLayout>
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="ĐÓNG"
+            android:textColor="#536DFE"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtUpdateProductSub"
@@ -85,22 +97,11 @@
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:text="Cập nhật"
+            android:text="CẬP NHẬT"
             android:textColor="#536DFE"
-            android:textSize="21sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/txtCancelUpProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="ĐÓNG"
-        android:textColor="#536DFE"
-        android:textSize="24sp"
-        android:textStyle="bold" />
 
 </LinearLayout>

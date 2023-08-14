@@ -4,9 +4,9 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCF9F9F9">
+    android:background="#33C0C0C0">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -14,9 +14,8 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tbBase"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:background="#f9f9f9"
+            android:layout_height="55dp"
+            android:background="@color/white"
             android:fitsSystemWindows="true"
             app:title="@null">
 
@@ -25,8 +24,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="#110000"
-                android:textSize="20sp" />
+                android:letterSpacing="0.02"
+                android:textColor="#36c5aa"
+                android:textSize="21sp"
+                android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -34,170 +35,30 @@
             android:id="@+id/flBase"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/tbBase"
             android:layout_weight="1"
             android:visibility="gone" />
 
-        <LinearLayout
-            android:id="@+id/llContainerHome"
+        <FrameLayout
+            android:layout_marginBottom="55dp"
+            android:id="@+id/frameBottomView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tbBase"
+            android:layout_weight="1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="15dp"
-                android:letterSpacing="0.13"
-                android:text="WareFlow"
-                android:textColor="#36c5aa"
-                android:textSize="35sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/btnToDoanhThu"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_background_item_left"
-                    android:drawableBottom="@drawable/revenue"
-                    android:paddingVertical="10dp"
-                    android:text="DOANH THU"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/btnTonKho"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_background_item_right"
-                    android:drawableBottom="@drawable/inventory"
-                    android:padding="10dp"
-                    android:paddingVertical="5dp"
-                    android:text="Tồn kho"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/btnQLLoaiSP"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_item_home"
-                    android:drawableTop="@drawable/type"
-                    android:paddingVertical="15dp"
-                    android:text="Loại sản phẩm"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btnQLSP"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_item_home"
-                    android:drawableTop="@drawable/product"
-                    android:paddingVertical="15dp"
-                    android:text="Sản phẩm"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/btnLSNhapHang"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_item_home"
-                    android:drawableTop="@drawable/history"
-                    android:paddingVertical="15dp"
-                    android:text="Lịch sử nhập"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btnLSXuat"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_item_home"
-                    android:drawableTop="@drawable/history"
-                    android:paddingVertical="15dp"
-                    android:text="Lịch sử xuất"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/btnChucNang1"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_item_home"
-                    android:text="Chưa phát triển"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btnChucNang2"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/custom_item_home"
-                    android:text="Chưa phát triển"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationViewBase"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:itemHorizontalTranslationEnabled="true"
+            app:itemTextColor="#0033FF"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/menu_bottom_navigation_base" />
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
