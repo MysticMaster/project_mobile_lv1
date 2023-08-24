@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -61,7 +63,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ManageMemberActivity extends NavigationActivity {
+public class ManageMemberActivity extends AppCompatActivity {
 
     private Context context;
     private List<Member> memberList;
@@ -87,18 +89,17 @@ public class ManageMemberActivity extends NavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater.from(this).inflate(R.layout.activity_manage_member, findViewById(R.id.flBase), true);
-
-        flBase.setVisibility(View.VISIBLE);
-        frameBottomView.setVisibility(View.GONE);
-        bottomNavigationViewBase.setVisibility(View.GONE);
-        setToolbarTitle("Quản Lý Nhân Viên");
+        setContentView(R.layout.activity_manage_member);
 
         context = ManageMemberActivity.this;
         memberList = new ArrayList<>();
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
         floatBtnAddMember = findViewById(R.id.floatBtnAddMember);
         recyclerMember = findViewById(R.id.recyclerMember);
+        ImageButton iBtnExitQLTV = findViewById(R.id.iBtnExitQLTV);
 
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -142,7 +143,15 @@ public class ManageMemberActivity extends NavigationActivity {
             }
         });
 
-        onClickItemToolbar(context);
+        iBtnExitQLTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void listenFirebaseMember() {
@@ -179,12 +188,6 @@ public class ManageMemberActivity extends NavigationActivity {
                 }
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        return true;
     }
 
     public void openDialogAddMember() {

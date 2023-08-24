@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.FragmentXuatNhap">
+    tools:context=".LichSuActivity">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayoutXuatNhap"
+        android:id="@+id/tabLayoutLichSu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#448AFF"
@@ -19,7 +19,7 @@
         app:tabTextColor="@color/white" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2XuatNhap"
+        android:id="@+id/viewPager2LichSu"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

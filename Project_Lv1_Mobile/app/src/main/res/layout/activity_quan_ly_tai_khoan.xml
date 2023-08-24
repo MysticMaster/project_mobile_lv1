@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#33C0C0C0"
     android:orientation="vertical"
-    tools:context=".fragment.FragmentTaiKhoan">
+    tools:context=".QuanLyTaiKhoanActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,32 +15,55 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_height="170dp">
 
                 <ImageView
-                    android:id="@+id/ivAvatarTaiKhoan"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:padding="2dp"
-                    android:scaleType="fitXY" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:background="#8064FFDA" />
 
-                <TextView
-                    android:id="@+id/txtTenTaiKhoan"
-                    android:layout_width="wrap_content"
+                <ImageButton
+                    android:id="@+id/iBtnExitQLTK"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_back"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent"/>
+
+                <LinearLayout
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="23sp" />
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivAvatarTaiKhoan"
+                        android:layout_width="80dp"
+                        android:layout_height="90dp"
+                        android:padding="2dp"
+                        android:scaleType="fitXY" />
+
+                    <TextView
+                        android:id="@+id/txtTenTaiKhoan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="23sp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -117,12 +140,12 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/llUpdateTaiKhoan"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/custom_button"
                 android:gravity="center"
-                android:id="@+id/llUpdateTaiKhoan"
                 android:orientation="horizontal">
 
                 <TextView
@@ -138,7 +161,6 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 

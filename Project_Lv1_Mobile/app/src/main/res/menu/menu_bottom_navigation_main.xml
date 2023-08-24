@@ -6,9 +6,9 @@
         android:title="Trang Chủ" />
 
     <item
-        android:id="@+id/itemXuatNhapBottom"
+        android:id="@+id/itemXuatBottom"
         android:icon="@drawable/export"
-        android:title="Xuất Nhập" />
+        android:title="Xuất" />
 
     <item
         android:id="@+id/itemLichSuBottom"
@@ -16,13 +16,14 @@
         android:title="Lịch Sử" />
 
     <item
-        android:id="@+id/itemDoanhThuBottom"
-        android:icon="@drawable/revenue"
-        android:title="Doanh Thu" />
+        android:id="@+id/itemNhapBottom"
+        android:icon="@drawable/export"
+        android:title="Nhập" />
+
 
     <item
-        android:id="@+id/itemTaiKhoanBottom"
-        android:icon="@drawable/user"
-        android:title="Tài Khoản" />
+        android:id="@+id/itemDoanhThuBottom"
+        android:icon="@drawable/revenue"
+        android:title="Thống Kê" />
 
 </menu>

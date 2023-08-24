@@ -7,12 +7,12 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".TaoPhieuNhapActivity">
+    tools:context=".TaoPhieuXuatActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phiếu Nhập"
+        android:text="Phiếu Xuất"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -38,7 +38,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtMaSoPhieuNhap"
+                android:id="@+id/txtMaSoPhieuXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -61,7 +61,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtNguoiTaoPhieuNhap"
+                android:id="@+id/txtNguoiTaoPhieuXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -84,7 +84,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtNgayTaoPhieu"
+                android:id="@+id/txtNgayXuatPhieu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -107,7 +107,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtTongSoSPNhapSub"
+                android:id="@+id/txtTongSoSPXuatSub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -125,12 +125,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:text="Tổng tiền:"
+                android:text="Tổng tiền chưa thuế:"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtTongTienNhap"
+                android:id="@+id/txtTongTienXuatTruoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Thuế: 10%"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Tổng tiền sau thuế:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtTongTienXuatSau"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -146,14 +177,14 @@
         android:layout_marginTop="20dp">
 
         <ProgressBar
-            android:id="@+id/progressBarPhieuNhap"
+            android:id="@+id/progressBarPhieuXuat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:visibility="invisible" />
 
         <Button
-            android:id="@+id/btnTaoPhieuNhap"
+            android:id="@+id/btnTaoPhieuXuat"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
@@ -165,7 +196,7 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/btnHuyTaoPhieuNhap"
+        android:id="@+id/btnHuyTaoPhieuXuat"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

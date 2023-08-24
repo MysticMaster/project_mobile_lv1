@@ -159,6 +159,7 @@ public class IntroProductActivity extends AppCompatActivity {
                                     ProductActivity.class);
                             intent.putExtras(bundle);
                             startActivity(intent);
+                            finish();
                         }
                         return false;
                     }
@@ -373,6 +374,15 @@ public class IntroProductActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
+                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
+                .show();
     }
 
     /*

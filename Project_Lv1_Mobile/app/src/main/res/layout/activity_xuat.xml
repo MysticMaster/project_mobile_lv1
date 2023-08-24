@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#26C0C0C0"
-    tools:context=".fragment.FragmentXuat">
+    tools:context=".XuatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerXuat"
@@ -18,25 +18,16 @@
         android:layout_alignParentBottom="true"
         android:background="#80C0C0C0">
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/add_icon"
-            android:background="#2906E6"
-            android:id="@+id/iBtnThemSPXuat"/>
-
-
         <LinearLayout
-            android:paddingHorizontal="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/iBtnThemSPXuat"
-            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
             android:orientation="vertical"
+            android:paddingHorizontal="5dp"
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/txtNguoiXuat"
+                android:id="@+id/txtTenNguoiXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"

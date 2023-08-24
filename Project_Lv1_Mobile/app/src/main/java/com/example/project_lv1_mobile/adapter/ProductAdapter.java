@@ -74,6 +74,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtTenSP.setText(productList.get(position).getProductName());
         holder.txtGiaSP.setText(Integer.toString(productList.get(position).getUnitPrice()));
+        holder.txtSLConLai.setText(Integer.toString(productList.get(position).getQuantity()));
 
         Glide.with(context).load(productList.get(position).getProductImageUri()).into(holder.ivImageProduct);
     }
@@ -86,7 +87,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivImageProduct,iBtnAddSPChon;
-        TextView txtTenSP, txtGiaSP;
+        TextView txtTenSP, txtGiaSP, txtSLConLai;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,6 +95,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             ivImageProduct = itemView.findViewById(R.id.ivImageProduct);
             txtTenSP = itemView.findViewById(R.id.txtTenSP);
             txtGiaSP = itemView.findViewById(R.id.txtGiaSP);
+            txtSLConLai = itemView.findViewById(R.id.txtSLConLai);
             iBtnAddSPChon = itemView.findViewById(R.id.iBtnAddSPChon);
 
             iBtnAddSPChon.setVisibility(View.GONE);
@@ -105,6 +107,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     bundle.putString("idProduct", productList.get(getAdapterPosition()).getIdProduct());
                     intent.putExtras(bundle);
                     ((Activity) context).startActivity(intent);
+                    ((Activity) context).finish();
                 }
             });
 

@@ -1,36 +1,27 @@
 package com.example.project_lv1_mobile;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.project_lv1_mobile.adapter.SearchProductAdapter;
-import com.example.project_lv1_mobile.fragment.FragmentXuatNhap;
 import com.example.project_lv1_mobile.model.Product;
 import com.example.project_lv1_mobile.tempDAO.PhieuNhapChiTietDAO;
 import com.example.project_lv1_mobile.tempDAO.PhieuXuatChiTietDAO;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.Normalizer;
@@ -77,8 +68,7 @@ public class ChonSPNhapXuatActivity extends AppCompatActivity {
 
         TextView txtTimKiem = findViewById(R.id.txtTimKiem);
 
-        adapter = new SearchProductAdapter(context, productList, phieuNhapChiTietDAO,
-                phieuXuatChiTietDAO, checkRank, idMember);
+        adapter = new SearchProductAdapter(context, productList, phieuNhapChiTietDAO, phieuXuatChiTietDAO, checkRank, idMember);
 
         LinearLayoutManager manager = new LinearLayoutManager(context);
         recyclerDanhSachSP.setLayoutManager(manager);
@@ -123,11 +113,17 @@ public class ChonSPNhapXuatActivity extends AppCompatActivity {
         iBtnThoatChonSP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChonSPNhapXuatActivity.this, NavigationActivity.class);
-                bundle.putInt("keySetItem", 1);
-                intent.putExtras(bundle);
-                startActivity(intent);
-                finish();
+                if (checkRank == 0) {
+                    Intent intent = new Intent(ChonSPNhapXuatActivity.this, NhapActivity.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    finish();
+                } else if (checkRank == 1) {
+                    Intent intent = new Intent(ChonSPNhapXuatActivity.this, XuatActivity.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
@@ -177,5 +173,13 @@ public class ChonSPNhapXuatActivity extends AppCompatActivity {
                 .toLowerCase();
 
         return normalizedOriginal.contains(normalizedQuery);
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
+                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
+                .show();
     }
 }

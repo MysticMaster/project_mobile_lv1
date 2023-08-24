@@ -46,6 +46,7 @@ public class TaoPhieuNhapActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+        String idMember = bundle.getString("idMember");
 
         context = TaoPhieuNhapActivity.this;
         nhapChiTietList = new ArrayList<>();
@@ -53,7 +54,6 @@ public class TaoPhieuNhapActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         crud = new FirebaseCRUD(firestore, context);
 
-        String idMember = bundle.getString("idMember");
 
         TextView txtMaSoPhieuNhap = findViewById(R.id.txtMaSoPhieuNhap);
         TextView txtNguoiTaoPhieuNhap = findViewById(R.id.txtNguoiTaoPhieuNhap);
@@ -64,7 +64,6 @@ public class TaoPhieuNhapActivity extends AppCompatActivity {
         ProgressBar progressBarPhieuNhap = findViewById(R.id.progressBarPhieuNhap);
         Button btnTaoPhieuNhap = findViewById(R.id.btnTaoPhieuNhap);
         Button btnHuyTaoPhieuNhap = findViewById(R.id.btnHuyTaoPhieuNhap);
-
 
         txtMaSoPhieuNhap.setText(UUID.randomUUID().toString());
 
@@ -151,8 +150,7 @@ public class TaoPhieuNhapActivity extends AppCompatActivity {
                         btnCancelItemThongBaoNhap.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(TaoPhieuNhapActivity.this, NavigationActivity.class);
-                                bundle.putInt("keySetItem", 1);
+                                Intent intent = new Intent(TaoPhieuNhapActivity.this, NhapActivity.class);
                                 intent.putExtras(bundle);
                                 startActivity(intent);
                                 dialogThongBao.dismiss();
@@ -179,8 +177,19 @@ public class TaoPhieuNhapActivity extends AppCompatActivity {
         btnHuyTaoPhieuNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(TaoPhieuNhapActivity.this, NhapActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
                 finish();
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
+                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
+                .show();
     }
 }

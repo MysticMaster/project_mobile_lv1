@@ -12,6 +12,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true">
+
+            <ImageButton
+                android:id="@+id/iBtnExitQLLoaiSP"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:letterSpacing="0.02"
+                android:text="Quản Lý Loại Sản Phẩm"
+                android:textColor="#36c5aa"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerType"
             android:layout_width="match_parent"
@@ -24,9 +52,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/add_icon" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

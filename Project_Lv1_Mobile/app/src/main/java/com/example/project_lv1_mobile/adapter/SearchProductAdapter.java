@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.project_lv1_mobile.R;
 import com.example.project_lv1_mobile.model.PhieuNhapChiTiet;
-import com.example.project_lv1_mobile.model.PhieuXuat;
 import com.example.project_lv1_mobile.model.PhieuXuatChiTiet;
 import com.example.project_lv1_mobile.model.Product;
 import com.example.project_lv1_mobile.tempDAO.PhieuNhapChiTietDAO;
@@ -55,48 +54,72 @@ public class SearchProductAdapter extends RecyclerView.Adapter<SearchProductAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtTenSP.setText(productList.get(position).getProductName());
-        holder.txtGiaSP.setText(Integer.toString(productList.get(position).getUnitPrice()));
-
-        Glide.with(context).load(productList.get(position).getProductImageUri()).into(holder.ivImageProduct);
-
         Product product = productList.get(position);
+
+        holder.txtTenSP.setText(product.getProductName());
+        holder.txtGiaSP.setText(Integer.toString(product.getUnitPrice()));
+        holder.txtSLConLai.setText(Integer.toString(product.getQuantity()));
+
+        Glide.with(context).load(product.getProductImageUri()).into(holder.ivImageProduct);
 
 
         holder.iBtnAddSPChon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<PhieuNhapChiTiet> nhapChiTietList = new ArrayList<>();
-                boolean check = false;
-                int size = 0;
 
-                nhapChiTietList.addAll(phieuNhapChiTietDAO.selectAllPNCT(idMember));
-                for (int i = 0; i < nhapChiTietList.size(); i++) {
-                    size++;
-                }
-
-                if (size == 5) {
-                    Toast.makeText(context, "Tối đa 5 sản phẩm", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                for (int i = 0; i < nhapChiTietList.size(); i++) {
-                    if (nhapChiTietList.get(i).getIdProduct().equals(product.getIdProduct())) {
-                        check = true;
-                        break;
+                if (checkRank == 0) {
+                    List<PhieuNhapChiTiet> nhapChiTietList = new ArrayList<>();
+                    nhapChiTietList.addAll(phieuNhapChiTietDAO.selectAllPNCT(idMember));
+                    boolean checkNhap = false;
+                    int sizeNhap = 0;
+                    for (int i = 0; i < nhapChiTietList.size(); i++) {
+                        sizeNhap++;
                     }
-                }
-
-
-                if (check == false) {
-                    if (checkRank == 0) {
+                    if (sizeNhap == 5) {
+                        Toast.makeText(context, "Tối đa 5 sản phẩm", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    for (int i = 0; i < nhapChiTietList.size(); i++) {
+                        if (nhapChiTietList.get(i).getIdProduct().equals(product.getIdProduct())) {
+                            checkNhap = true;
+                            break;
+                        }
+                    }
+                    if (checkNhap == false) {
                         inserPhieuNhapChiTiet(product);
                         Toast.makeText(context, "Đã thêm", Toast.LENGTH_SHORT).show();
-                    } else if (checkRank == 1) {
-                        inserPhieuXuatChiTiet(product);
+                    } else {
+                        Toast.makeText(context, "Sản phẩm đã được chọn", Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(context, "Sản phẩm đã được chọn", Toast.LENGTH_SHORT).show();
+                } else if (checkRank == 1) {
+                    List<PhieuXuatChiTiet> xuatChiTietList = new ArrayList<>();
+                    xuatChiTietList.addAll(phieuXuatChiTietDAO.selectAllPXCT(idMember));
+
+                    boolean checkXuat = false;
+                    int sizeXuat = 0;
+                    for (int i = 0; i < xuatChiTietList.size(); i++) {
+                        sizeXuat++;
+                    }
+                    if (sizeXuat == 5) {
+                        Toast.makeText(context, "Tối đa 5 sản phẩm", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    for (int i = 0; i < xuatChiTietList.size(); i++) {
+                        if (xuatChiTietList.get(i).getIdProduct().equals(product.getIdProduct())) {
+                            checkXuat = true;
+                            break;
+                        }
+                    }
+                    if (checkXuat == false) {
+                        if (product.getQuantity() < 1) {
+                            Toast.makeText(context, "Sản phẩm đã hết", Toast.LENGTH_SHORT).show();
+                        } else {
+                            inserPhieuXuatChiTiet(product);
+                            Toast.makeText(context, "Đã thêm", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(context, "Sản phẩm đã được chọn", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -111,7 +134,7 @@ public class SearchProductAdapter extends RecyclerView.Adapter<SearchProductAdap
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivImageProduct, iBtnAddSPChon;
-        TextView txtTenSP, txtGiaSP;
+        TextView txtTenSP, txtGiaSP, txtSLConLai;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -119,8 +142,8 @@ public class SearchProductAdapter extends RecyclerView.Adapter<SearchProductAdap
             ivImageProduct = itemView.findViewById(R.id.ivImageProduct);
             txtTenSP = itemView.findViewById(R.id.txtTenSP);
             txtGiaSP = itemView.findViewById(R.id.txtGiaSP);
+            txtSLConLai = itemView.findViewById(R.id.txtSLConLai);
             iBtnAddSPChon = itemView.findViewById(R.id.iBtnAddSPChon);
-
         }
     }
 
@@ -140,16 +163,13 @@ public class SearchProductAdapter extends RecyclerView.Adapter<SearchProductAdap
         String idProduct = product.getIdProduct();
         int soLuongXuat = 1;
         int soTien = product.getUnitPrice();
-        PhieuXuatChiTiet phieuXuatChiTiet = new
-                PhieuXuatChiTiet(idPhieuXuatCT, idProduct, soLuongXuat, soTien);
-        //  phieuXuatChiTiet.insert(phieuXuatChiTiet);
+        PhieuXuatChiTiet phieuXuatChiTiet = new PhieuXuatChiTiet(idPhieuXuatCT, idMember, idProduct, soLuongXuat, soTien);
+        phieuXuatChiTietDAO.insert(phieuXuatChiTiet);
     }
 
-    public void fillSearch(List<Product> listSearch){
+    public void fillSearch(List<Product> listSearch) {
         productList.clear();
         productList.addAll(listSearch);
         notifyDataSetChanged();
     }
-
-
 }

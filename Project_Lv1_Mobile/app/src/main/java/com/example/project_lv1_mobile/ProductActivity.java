@@ -8,11 +8,13 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -57,7 +60,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ProductActivity extends NavigationActivity {
+public class ProductActivity extends AppCompatActivity {
 
     private Context context;
     private List<ProductType> productTypeList;
@@ -90,19 +93,18 @@ public class ProductActivity extends NavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater.from(this).inflate(R.layout.activity_product, findViewById(R.id.flBase), true);
-
-        flBase.setVisibility(View.VISIBLE);
-        frameBottomView.setVisibility(View.GONE);
-        bottomNavigationViewBase.setVisibility(View.GONE);
-        setToolbarTitle("Quản Lý Sản Phẩm");
+        setContentView(R.layout.activity_product);
 
         context = ProductActivity.this;
         productList = new ArrayList<>();
         productTypeList = new ArrayList<>();
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
         bottomNavigationProduct = findViewById(R.id.bottomNavigationProduct);
         floatBtnAddProduct = findViewById(R.id.floatBtnAddProduct);
+        ImageButton iBtnExitQLSP = findViewById(R.id.iBtnExitQLSP);
 
         firestore = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -159,13 +161,16 @@ public class ProductActivity extends NavigationActivity {
 
         bottomNavigationProduct.setSelectedItemId(R.id.itemKinhDoanh);
 
-        onClickItemToolbar(context);
-    }
+        iBtnExitQLSP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        return true;
     }
 
     private void listenFirebaseType() {

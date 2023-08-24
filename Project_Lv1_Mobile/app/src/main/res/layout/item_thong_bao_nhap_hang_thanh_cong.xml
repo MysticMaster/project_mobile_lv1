@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Tạo phiếu nhập hàng thành công"
+        android:text="Tạo phiếu thành công"
         android:textColor="@color/black"
         android:textSize="20sp" />
 

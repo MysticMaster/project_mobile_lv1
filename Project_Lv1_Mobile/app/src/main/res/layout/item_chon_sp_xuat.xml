@@ -2,15 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/custom_layout"
-    android:layout_margin="3dp">
+    android:layout_margin="3dp"
+    android:background="@drawable/custom_layout">
 
     <ImageView
-        android:layout_centerInParent="true"
-        android:id="@+id/ivImageSPChon"
-        android:layout_width="65dp"
-        android:layout_height="75dp"
+        android:id="@+id/ivImageSPChonXuat"
+        android:layout_width="68dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
         android:scaleType="fitXY" />
 
     <LinearLayout
@@ -18,36 +18,44 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
-        android:paddingVertical="2dp"
-        android:layout_toRightOf="@+id/ivImageSPChon"
-        android:orientation="vertical">
+        android:layout_toRightOf="@+id/ivImageSPChonXuat"
+        android:orientation="vertical"
+        android:paddingVertical="2dp">
 
         <TextView
-            android:id="@+id/txtTenSPChon"
+            android:id="@+id/txtTenSPChonXuat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="1dp"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <TextView
-            android:id="@+id/txtGiaSPChon"
+            android:id="@+id/txtTonKhoSPChonXuat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="1dp"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <TextView
-            android:id="@+id/txtSoLuongSPChon"
+            android:id="@+id/txtGiaSPChonXuat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="1dp"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <TextView
-            android:id="@+id/txtTongTienSPChon"
+            android:id="@+id/txtSoLuongSPChonXuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtTongTienSPChonXuat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -56,7 +64,7 @@
     </LinearLayout>
 
     <com.example.project_lv1_mobile.widget.CustomQuantityPicker
-        android:id="@+id/cqpSoLuongSP"
+        android:id="@+id/cqpSoLuongSPXuat"
         android:layout_width="110dp"
         android:layout_height="35dp"
         android:layout_alignParentRight="true"
@@ -64,12 +72,12 @@
         android:layout_marginRight="25dp" />
 
     <ImageButton
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="2dp"
-        android:id="@+id/iBtnBoChon"
+        android:id="@+id/iBtnBoChonXuat"
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
         android:background="@color/white"
         android:scaleType="fitXY"
         android:src="@drawable/cancel" />

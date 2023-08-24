@@ -132,27 +132,27 @@ public class FirebaseCRUD {
     }
 
     //  PHIEUXUAT
-//    public void taoPhieuXuat(PhieuXuat phieuXuat) {
-//        HashMap<String, Object> mapPhieuXuat = phieuXuat.objectPhieuXuat();
-//        firestore.collection(COLLECTION_PHIEU_XUAT).document(phieuXuat.getIdPhieuXuat())
-//                .set(mapPhieuXuat).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void unused) {
-//
-//                    }
-//                }).addOnFailureListener(e -> {
-//                    Log.e("Error", "Fail" + e);
-//                });
-//    }
-//
-//    public void updatePhieuXuat(PhieuXuat phieuXuat) {
-//        firestore.collection(COLLECTION_PHIEU_XUAT).document(phieuXuat.getIdPhieuXuat()).update(phieuXuat.objectPhieuXuat())
-//                .addOnSuccessListener(aVoid -> {
-//                    Toast.makeText(context, "Đã cập nhật", Toast.LENGTH_SHORT).show();
-//                }).addOnFailureListener(e -> {
-//                    Log.e("Error", "Fail" + e);
-//                });
-//    }
+    public void taoPhieuXuat(PhieuXuat phieuXuat) {
+        HashMap<String, Object> mapPhieuXuat = phieuXuat.objectPhieuXuat();
+        firestore.collection(COLLECTION_PHIEU_XUAT).document(phieuXuat.getIdPhieuXuat())
+                .set(mapPhieuXuat).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+
+                    }
+                }).addOnFailureListener(e -> {
+                    Log.e("Error", "Fail" + e);
+                });
+    }
+
+    public void updatePhieuXuat(PhieuXuat phieuXuat) {
+        firestore.collection(COLLECTION_PHIEU_XUAT).document(phieuXuat.getIdPhieuXuat()).update(phieuXuat.objectPhieuXuat())
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(context, "Đã cập nhật", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(e -> {
+                    Log.e("Error", "Fail" + e);
+                });
+    }
 
     //  PHIEUXUATCHITIET
     public void taoPhieuXuatChiTiet(PhieuXuatChiTiet phieuXuatChiTiet){

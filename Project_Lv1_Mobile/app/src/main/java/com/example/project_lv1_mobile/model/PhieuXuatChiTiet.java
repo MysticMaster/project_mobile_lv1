@@ -4,23 +4,16 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class PhieuXuatChiTiet implements Serializable {
-    private String idPhieuXuatCT, idPhieuXuat, idProduct, tenSP;
+    private String idPhieuXuatCT, idPhieuXuat, idMember, idProduct, tenSP;
     private int soLuongXuat, soTien;
 
     public PhieuXuatChiTiet() {
     }
 
-    public PhieuXuatChiTiet(String idPhieuXuatCT, String idProduct, int soLuongXuat, int soTien) {
+    public PhieuXuatChiTiet(String idPhieuXuatCT, String idMember, String idProduct, int soLuongXuat, int soTien) {
         this.idPhieuXuatCT = idPhieuXuatCT;
+        this.idMember = idMember;
         this.idProduct = idProduct;
-        this.soLuongXuat = soLuongXuat;
-        this.soTien = soTien;
-    }
-
-    public PhieuXuatChiTiet(String idPhieuXuatCT, String idPhieuXuat, String tenSP, int soLuongXuat, int soTien) {
-        this.idPhieuXuatCT = idPhieuXuatCT;
-        this.idPhieuXuat = idPhieuXuat;
-        this.tenSP = tenSP;
         this.soLuongXuat = soLuongXuat;
         this.soTien = soTien;
     }
@@ -40,6 +33,15 @@ public class PhieuXuatChiTiet implements Serializable {
 
     public PhieuXuatChiTiet setIdPhieuXuat(String idPhieuXuat) {
         this.idPhieuXuat = idPhieuXuat;
+        return this;
+    }
+
+    public String getIdMember() {
+        return idMember;
+    }
+
+    public PhieuXuatChiTiet setIdMember(String idMember) {
+        this.idMember = idMember;
         return this;
     }
 

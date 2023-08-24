@@ -168,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
                                                                         getMember = member;
                                                                     }
 
-                                                                    Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
+                                                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                                                     Bundle bundle = new Bundle();
                                                                     bundle.putString("idMember", getMember.getIdMember());
                                                                     bundle.putInt("rank", getMember.getRank());
@@ -303,6 +303,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public void onBackPressed() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
+                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
+                .show();
+    }
 
 }

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -28,6 +29,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,7 +56,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ProductTypeActivity extends NavigationActivity {
+public class ProductTypeActivity extends AppCompatActivity {
 
     private Context context;
     private List<ProductType> productTypeList;
@@ -78,20 +80,18 @@ public class ProductTypeActivity extends NavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater.from(this).inflate(R.layout.activity_product_type, findViewById(R.id.flBase), true);
-
-        flBase.setVisibility(View.VISIBLE);
-        frameBottomView.setVisibility(View.GONE);
-        bottomNavigationViewBase.setVisibility(View.GONE);
-        setToolbarTitle("Quản Lý Loại Sản Phẩm");
-
-        String idMember = bundle.getString("idMember");
+        setContentView(R.layout.activity_product_type);
 
         context = ProductTypeActivity.this;
         productTypeList = new ArrayList<>();
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String idMember = bundle.getString("idMember");
+
         floatBtnAddType = findViewById(R.id.floatBtnAddType);
         recyclerType = findViewById(R.id.recyclerType);
+        ImageButton iBtnExitQLLoaiSP = findViewById(R.id.iBtnExitQLLoaiSP);
 
         firestore = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -125,12 +125,6 @@ public class ProductTypeActivity extends NavigationActivity {
         adapter = new ProductTypeAdapter(context, productTypeList, crud, idMember);
         recyclerType.setAdapter(adapter);
 
-
-        if (rank != 0) {
-            floatBtnAddType.setVisibility(View.GONE);
-        }
-
-
         floatBtnAddType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,13 +132,16 @@ public class ProductTypeActivity extends NavigationActivity {
             }
         });
 
-        onClickItemToolbar(context);
-    }
+        iBtnExitQLLoaiSP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        return true;
     }
 
     private void listenFirebaseType() {
