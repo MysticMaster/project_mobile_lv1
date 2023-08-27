@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6C0C0C0"
+    android:background="#E6ECCD96"
     android:orientation="vertical">
 
     <ScrollView
@@ -15,8 +15,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="30dp">
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="40dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -24,22 +24,21 @@
                 android:gravity="center"
                 android:text="Thông tin nhân viên"
                 android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="25dp" />
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="28dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="#66000000"
                 android:padding="2dp">
 
                 <ImageView
-                    android:src="@drawable/photo_icon"
                     android:id="@+id/ivFillAvatar"
-                    android:layout_width="220dp"
-                    android:layout_height="260dp"
+                    android:layout_width="240dp"
+                    android:layout_height="280dp"
                     android:layout_gravity="center"
                     android:scaleType="fitXY" />
 
@@ -184,8 +183,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Vô hiệu hóa"
-                        android:textColor="#536DFE"
-                        android:textSize="21sp"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -193,8 +192,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kích hoạt"
-                        android:textColor="#536DFE"
-                        android:textSize="21sp"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
                         android:textStyle="bold" />
 
                 </FrameLayout>
@@ -208,8 +207,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:text="ĐÓNG"
-                    android:textColor="#536DFE"
-                    android:textSize="21sp"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

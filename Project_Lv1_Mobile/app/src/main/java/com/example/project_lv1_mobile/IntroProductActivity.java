@@ -380,20 +380,8 @@ public class IntroProductActivity extends AppCompatActivity {
     public void onBackPressed() {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
         builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
-                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setPositiveButton("Có", (dialog, which) -> startActivity(new Intent(context, WelcomeActivity.class)))
                 .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
                 .show();
     }
-
-    /*
-
-        Calendar date = Calendar.getInstance();
-        int year = date.get(Calendar.YEAR);
-        int month = date.get(Calendar.MONTH) + 1;
-        int day = date.get(Calendar.DAY_OF_MONTH);
-
-        txtNgayNhap.setText(String.format("%d/%d/%d", day, month, year));
-
-*/
-
 }

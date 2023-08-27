@@ -3,17 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E6ECCD96"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="50dp"
     tools:context=".TaoPhieuXuatActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Phiếu Xuất"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
 
@@ -34,14 +36,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Mã số:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtMaSoPhieuXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -57,14 +59,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Người tạo:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtNguoiTaoPhieuXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -80,14 +82,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Ngày tạo:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtNgayXuatPhieu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -103,14 +105,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Tổng sản phẩm:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtTongSoSPXuatSub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -126,14 +128,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Tổng tiền chưa thuế:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtTongTienXuatTruoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -143,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Thuế: 10%"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -157,14 +159,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Tổng tiền sau thuế:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtTongTienXuatSau"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </LinearLayout>

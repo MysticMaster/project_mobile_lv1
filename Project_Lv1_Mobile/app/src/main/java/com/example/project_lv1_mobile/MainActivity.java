@@ -160,7 +160,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(context, LoginActivity.class));
             finish();
         } else if (item.getItemId() == R.id.itemThoat) {
-            System.exit(0);
+            startActivity(new Intent(context, WelcomeActivity.class));
+            finish();
         } else if (item.getItemId() == R.id.itemAdd) {
             if (nhapORxuat == 0){
                 Intent toChonSP = new Intent(context, ChonSPNhapXuatActivity.class);
@@ -192,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
         builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
-                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setPositiveButton("Có", (dialog, which) -> startActivity(new Intent(context, WelcomeActivity.class)))
                 .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
                 .show();
     }

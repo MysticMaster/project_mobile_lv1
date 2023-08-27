@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#C0C0C0"
+    android:layout_height="wrap_content"
+    android:paddingVertical="50dp"
+    android:background="#E6ECCD96"
     android:orientation="vertical">
 
     <LinearLayout
@@ -21,8 +22,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Chỉnh Sửa Thông Tin"
-            android:textColor="#36c5aa"
-            android:textSize="26sp"
+            android:textColor="@color/white"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#33C0C0C0"
+    android:background="#F2ECCD96"
     android:orientation="vertical"
     tools:context=".QuanLyTaiKhoanActivity">
 
@@ -22,10 +22,12 @@
                 android:layout_height="170dp">
 
                 <ImageView
+                    android:alpha="0.9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:background="#8064FFDA" />
+                    android:src="@drawable/anhbia"
+                    android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:id="@+id/iBtnExitQLTK"
@@ -58,8 +60,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:textColor="@color/black"
-                        android:textSize="23sp" />
+                        android:textColor="@color/white"
+                        android:textSize="26sp" />
 
                 </LinearLayout>
 
@@ -69,8 +71,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
                 android:text="Thông tin cá nhân"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="23dp" />
 
             <LinearLayout
@@ -83,15 +87,16 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:text="Họ và tên"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
 
                 <TextView
                     android:id="@+id/txtFullNameTaiKhoan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
 
             </LinearLayout>
 
@@ -105,15 +110,16 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:text="Giới tính"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
 
                 <TextView
                     android:id="@+id/txtGioiTinhTaiKhoan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
 
             </LinearLayout>
 
@@ -127,22 +133,24 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:text="Email"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
 
                 <TextView
                     android:id="@+id/txtEmailTaiKhoan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14dp" />
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginHorizontal="5dp"
                 android:id="@+id/llUpdateTaiKhoan"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/custom_button"
                 android:gravity="center"
@@ -150,7 +158,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/custom_button"
                     android:drawableLeft="@drawable/writing"
                     android:drawablePadding="5dp"

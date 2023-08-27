@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#26C0C0C0"
+    android:background="#E6ECCD96"
     tools:context=".XuatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="#80C0C0C0">
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
                 android:id="@+id/txtTenNguoiXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -38,21 +38,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/txtXuatSub"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:background="#2906E6"
+            android:background="#36c5aa"
             android:gravity="center"
             android:text="Xác Nhận"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

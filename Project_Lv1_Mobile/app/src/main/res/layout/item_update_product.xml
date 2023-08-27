@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
+    android:background="#F2ECCD96"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:paddingVertical="100dp"
+    android:paddingHorizontal="15dp">
 
     <TextView
         android:id="@+id/txtFillProductTypeUp"
@@ -12,10 +14,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
+        android:background="@drawable/custom_edittext"
         android:id="@+id/edtProductNameUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +30,7 @@
         android:textSize="18sp" />
 
     <EditText
+        android:background="@drawable/custom_edittext"
         android:id="@+id/edtDonGiaUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,20 +57,22 @@
         android:layout_marginTop="10dp">
 
         <TextView
+            android:layout_gravity="center"
             android:id="@+id/txtNgungKinhDoanh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ngừng Kinh Doanh"
-            android:textColor="#536DFE"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
+            android:layout_gravity="center"
             android:id="@+id/txtKinhDoanh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kinh doanh"
-            android:textColor="#536DFE"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -86,8 +92,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="ĐÓNG"
-            android:textColor="#536DFE"
-            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -98,8 +104,8 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:text="CẬP NHẬT"
-            android:textColor="#536DFE"
-            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

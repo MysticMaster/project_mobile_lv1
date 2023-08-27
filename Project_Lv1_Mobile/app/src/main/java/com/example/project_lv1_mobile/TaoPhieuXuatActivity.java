@@ -189,7 +189,7 @@ public class TaoPhieuXuatActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Bạn có chắc muốn thoát ứng dụng?")
-                .setPositiveButton("Có", (dialog, which) -> finish())
+                .setPositiveButton("Có", (dialog, which) -> startActivity(new Intent(context, WelcomeActivity.class)))
                 .setNegativeButton("Không", (dialog, which) -> dialog.dismiss())
                 .show();
     }

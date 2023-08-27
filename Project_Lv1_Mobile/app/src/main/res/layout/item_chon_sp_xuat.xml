@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp"
+    android:layout_marginBottom="3dp"
     android:background="@drawable/custom_layout">
 
     <ImageView
         android:id="@+id/ivImageSPChonXuat"
-        android:layout_width="68dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="85dp"
         android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:scaleType="fitXY" />
@@ -78,7 +78,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="2dp"
         android:layout_marginRight="2dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/cancel" />
 

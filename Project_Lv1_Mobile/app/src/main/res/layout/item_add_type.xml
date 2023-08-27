@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#B3007A91"
+    android:background="#E6ECCD96"
     android:orientation="vertical"
-    android:paddingHorizontal="8dp"
-    android:paddingVertical="25dp">
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="50dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,19 +13,19 @@
         android:gravity="center"
         android:text="Thêm loại sản phẩm"
         android:textColor="@color/white"
-        android:textSize="26dp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
 
     <ImageView
         android:id="@+id/ivImageType"
-        android:layout_width="180dp"
-        android:layout_height="150dp"
+        android:layout_width="220dp"
+        android:layout_height="260dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginRight="10dp"
         android:clickable="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/photo_icon" />
 
     <EditText
@@ -58,7 +58,7 @@
             android:layout_centerInParent="true"
             android:text="ĐÓNG"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="23sp"
             android:textStyle="bold" />
 
         <FrameLayout

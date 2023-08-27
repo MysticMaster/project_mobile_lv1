@@ -127,6 +127,13 @@ public class QuanLyTaiKhoanActivity extends AppCompatActivity {
                 updatePassWordAccount(member.getEmail());
             }
         });
+
+        txtCancelLuaChonEditTK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
     }
 
     private void updateIntroAccount(Member member) {

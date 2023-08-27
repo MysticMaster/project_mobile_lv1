@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F2ECCD96"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:paddingVertical="100dp"
+    android:paddingHorizontal="15dp">
 
     <EditText
         android:id="@+id/edtUpdateTypeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_edittext"
         android:hint="Tên loại sản phẩm"
         android:padding="10dp"
         android:textColor="@color/black"
@@ -22,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Cập nhật"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -32,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Đóng"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
 

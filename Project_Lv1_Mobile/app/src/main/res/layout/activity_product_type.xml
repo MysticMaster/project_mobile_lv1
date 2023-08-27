@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f9f9f9"
+    android:background="#E6ECCD96"
     tools:context=".ProductTypeActivity">
 
     <LinearLayout
@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentTop="true">
@@ -35,7 +36,7 @@
                 android:letterSpacing="0.02"
                 android:text="Quản Lý Loại Sản Phẩm"
                 android:textColor="#36c5aa"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

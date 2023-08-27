@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6ECCD96"
     tools:context=".fragment.FragmentThongKeXuat">
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/barChartThongKeXuat"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="270dp"
         android:layout_alignParentTop="true"
         android:layout_margin="5dp" />
 
@@ -110,7 +111,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="2.5dp"
                     android:layout_weight="1"
-                    android:background="#B2FF59"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -119,7 +120,8 @@
                         android:layout_height="wrap_content"
                         android:text="Đã Xuất"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtDaXuat"
@@ -135,7 +137,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="2.5dp"
                     android:layout_weight="1"
-                    android:background="#FF5252"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -144,7 +146,8 @@
                         android:layout_height="wrap_content"
                         android:text="Tổng Tiền"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtTongTienXuat"
@@ -170,7 +173,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="2.5dp"
                     android:layout_weight="1"
-                    android:background="#FF5252"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -178,8 +181,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tổng số sản phẩm"
+                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtSoSPXuat"
@@ -195,7 +199,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="2.5dp"
                     android:layout_weight="1"
-                    android:background="#B2FF59"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -203,8 +207,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tổng Tiền Thuế"
+                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtTongTienThue"

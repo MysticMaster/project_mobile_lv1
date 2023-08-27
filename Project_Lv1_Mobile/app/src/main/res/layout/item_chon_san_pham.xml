@@ -2,15 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/custom_layout"
-    android:layout_margin="3dp">
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/custom_layout">
 
     <ImageView
-        android:layout_centerInParent="true"
         android:id="@+id/ivImageSPChon"
-        android:layout_width="65dp"
-        android:layout_height="75dp"
+        android:layout_width="70dp"
+        android:layout_height="85dp"
         android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
         android:scaleType="fitXY" />
 
     <LinearLayout
@@ -18,9 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
-        android:paddingVertical="2dp"
         android:layout_toRightOf="@+id/ivImageSPChon"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingVertical="2dp">
 
         <TextView
             android:id="@+id/txtTenSPChon"
@@ -64,13 +64,13 @@
         android:layout_marginRight="25dp" />
 
     <ImageButton
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="2dp"
         android:id="@+id/iBtnBoChon"
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:layout_alignParentRight="true"
-        android:background="@color/white"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/cancel" />
 
