@@ -16,7 +16,7 @@ tools:context=".NhapActivity">
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:layout_alignParentBottom="true"
-    android:background="#80C0C0C0">
+    >
 
     <LinearLayout
         android:paddingHorizontal="5dp"
@@ -30,7 +30,8 @@ tools:context=".NhapActivity">
             android:id="@+id/txtTenNguoiNhap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indam"
             android:textSize="14sp" />
 
         <TextView
@@ -38,7 +39,8 @@ tools:context=".NhapActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:textColor="@color/white"
+            android:fontFamily="@font/indam"
+            android:textColor="@color/black"
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -48,10 +50,9 @@ tools:context=".NhapActivity">
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:background="#2906E6"
         android:gravity="center"
         android:text="Xác Nhận"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold" />
 

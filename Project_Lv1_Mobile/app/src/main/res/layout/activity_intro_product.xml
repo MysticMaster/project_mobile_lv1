@@ -10,13 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#33F9F9F9"
+        android:background="@drawable/giaytrangco"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#30b79c"
             android:orientation="vertical">
 
             <ImageView
@@ -31,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:paddingLeft="30dp"
-                android:textColor="@color/white"
+                android:fontFamily="@font/indam"
+                android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="30dp"
+            android:fontFamily="@font/indam"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="30dp"
+            android:fontFamily="@font/indam"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -62,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="30dp"
+            android:fontFamily="@font/indam"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -71,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="30dp"
+            android:fontFamily="@font/indam"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -81,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
-        android:background="@color/white"
+        android:background="#EBDCBC"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:menu="@menu/menu_bottom_navigation_intro_product" />

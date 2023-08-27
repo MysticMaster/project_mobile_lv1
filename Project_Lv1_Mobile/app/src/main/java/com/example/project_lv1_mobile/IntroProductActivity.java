@@ -140,12 +140,12 @@ public class IntroProductActivity extends AppCompatActivity {
     public void fillData() {
         Glide.with(context).load(product.getProductImageUri()).into(ivImageProductFill);
 
-        txtFillProductName.setText(product.getProductName());
-        txtFillProductType.setText(productTyeName);
-        txtFIllProductUnitPrice.setText(Integer.toString(product.getUnitPrice()));
-        txtFillSoLuong.setText(Integer.toString(product.getQuantity()));
+        txtFillProductName.setText("Tên:"+product.getProductName());
+        txtFillProductType.setText("Loại:"+productTyeName);
+        txtFIllProductUnitPrice.setText("Gía:"+Integer.toString(product.getUnitPrice()));
+        txtFillSoLuong.setText("Số lượng:"+Integer.toString(product.getQuantity()));
 
-        String trangThai = product.getStatus() == 0 ? "Kinh doanh" : "Ngừng kinh doanh";
+        String trangThai = product.getStatus() == 0 ? "Trạng thái:Kinh doanh" : "Trạng thái:Ngừng kinh doanh";
         txtFillTrangThai.setText(trangThai);
 
         bottomNavigationIntroProduct.setOnNavigationItemSelectedListener(

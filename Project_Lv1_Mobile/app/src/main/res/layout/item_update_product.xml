@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@drawable/giaytrangco"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/black"
+        android:fontFamily="@font/indam"
         android:textSize="22sp"
         android:textStyle="bold" />
 
@@ -21,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Tên sản phẩm"
+        android:fontFamily="@font/indam"
         android:paddingHorizontal="10dp"
         android:textColor="@color/black"
         android:textColorHint="#C0C0C0"
@@ -32,9 +35,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Đơn giá"
+        android:fontFamily="@font/indam"
         android:paddingHorizontal="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#C0C0C0"
+        android:textColorHint="@color/black"
         android:textSize="18sp" />
 
     <Spinner
@@ -43,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:background="#D6B68D"
         android:padding="10dp" />
 
     <FrameLayout
@@ -57,7 +61,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ngừng Kinh Doanh"
-            android:textColor="#536DFE"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indam"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -65,8 +70,9 @@
             android:id="@+id/txtKinhDoanh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/indam"
             android:text="Kinh doanh"
-            android:textColor="#536DFE"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -85,8 +91,10 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
             android:text="ĐÓNG"
-            android:textColor="#536DFE"
+            android:fontFamily="@font/indam"
+            android:textColor="#EF2416"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -97,8 +105,10 @@
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/indam"
             android:text="CẬP NHẬT"
-            android:textColor="#536DFE"
+            android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold" />
 

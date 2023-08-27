@@ -11,12 +11,12 @@
         android:id="@+id/tabLayoutLichSu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#448AFF"
+        android:background="@drawable/custom_button"
         app:tabIndicatorColor="#69F0AE"
         app:tabIndicatorHeight="50dp"
         app:tabRippleColor="@color/black"
         app:tabSelectedTextColor="#FF5252"
-        app:tabTextColor="@color/white" />
+        app:tabTextColor="@color/black" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2LichSu"

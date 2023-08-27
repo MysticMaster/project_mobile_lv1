@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/giaytrangco"
     tools:context=".ProductActivity">
 
     <RelativeLayout
@@ -33,8 +34,9 @@
                 android:layout_centerInParent="true"
                 android:letterSpacing="0.02"
                 android:text="Quản Lý Sản Phẩm"
-                android:textColor="#36c5aa"
+                android:textColor="@color/black"
                 android:textSize="18sp"
+                android:fontFamily="@font/indam"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -52,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/white"
+            android:background="#EBDCBC"
             app:itemTextColor="@color/black"
             app:labelVisibilityMode="auto"
             app:menu="@menu/menu_bottom_navigation_product" />

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#B3007A91"
+    android:background="@drawable/giayco"
     android:orientation="vertical"
     android:paddingHorizontal="8dp"
     android:paddingVertical="25dp">
@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Thêm sản phẩm"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:fontFamily="@font/indam"
         android:textSize="26dp"
         android:textStyle="bold" />
 
@@ -36,11 +37,12 @@
         android:background="@drawable/custom_edittext"
         android:drawablePadding="10dp"
         android:hint="Tên sản phẩm"
+        android:fontFamily="@font/indam"
         android:inputType="text"
         android:paddingHorizontal="10dp"
         android:paddingVertical="15dp"
         android:textColor="#B3000000"
-        android:textColorHint="#C0C0C0"
+        android:textColorHint="@color/black"
         android:textSize="14sp" />
 
     <EditText
@@ -50,12 +52,13 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/custom_edittext"
         android:drawablePadding="10dp"
+        android:fontFamily="@font/indam"
         android:hint="Đơn giá"
         android:inputType="text"
         android:paddingHorizontal="10dp"
         android:paddingVertical="15dp"
         android:textColor="#B3000000"
-        android:textColorHint="#C0C0C0"
+        android:textColorHint="@color/black"
         android:textSize="14sp" />
 
     <Spinner
@@ -63,7 +66,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:background="@drawable/custom_button"
         android:padding="10dp" />
 
 
@@ -79,8 +82,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
+            android:fontFamily="@font/indam"
             android:text="ĐÓNG"
-            android:textColor="@color/white"
+            android:textColor="#F61010"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -105,8 +109,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_button"
                 android:paddingHorizontal="40dp"
+                android:fontFamily="@font/indam"
                 android:text="Thêm"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
         </FrameLayout>

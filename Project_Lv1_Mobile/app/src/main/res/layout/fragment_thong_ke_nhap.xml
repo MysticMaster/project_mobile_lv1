@@ -110,7 +110,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                 android:layout_height="match_parent"
                 android:layout_marginRight="2.5dp"
                 android:layout_weight="1"
-                android:background="#B2FF59"
+                android:background="@drawable/custom_button"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -118,6 +118,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Đã Nhập"
+                    android:fontFamily="@font/indam"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -125,6 +126,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:id="@+id/txtDaNhap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/indam"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -135,7 +137,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                 android:layout_height="match_parent"
                 android:layout_marginLeft="2.5dp"
                 android:layout_weight="1"
-                android:background="#FF5252"
+                android:background="@drawable/custom_button"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -143,6 +145,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tổng Tiền"
+                    android:fontFamily="@font/indam"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -150,6 +153,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:id="@+id/txtTongTienNhap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/indam"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -170,7 +174,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                 android:layout_height="match_parent"
                 android:layout_marginRight="2.5dp"
                 android:layout_weight="1"
-                android:background="#FF5252"
+                android:background="@drawable/custom_button"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -178,6 +182,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tổng số sản phẩm"
+                    android:fontFamily="@font/indam"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -186,6 +191,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/indam"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -195,7 +201,7 @@ tools:context=".fragment.FragmentThongKeNhap">
                 android:layout_height="match_parent"
                 android:layout_marginLeft="2.5dp"
                 android:layout_weight="1"
-                android:background="#B2FF59"
+                android:background="@drawable/custom_button"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -203,11 +209,13 @@ tools:context=".fragment.FragmentThongKeNhap">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Không biết để cái gì"
+                    android:fontFamily="@font/indam"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtNull"
+                    android:fontFamily="@font/indam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"

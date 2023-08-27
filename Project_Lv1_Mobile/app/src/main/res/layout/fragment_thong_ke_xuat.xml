@@ -110,7 +110,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="2.5dp"
                     android:layout_weight="1"
-                    android:background="#B2FF59"
+                    android:background="@drawable/custom_button"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -118,11 +118,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Đã Xuất"
+                        android:fontFamily="@font/indam"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/txtDaXuat"
+                        android:fontFamily="@font/indam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -135,13 +137,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="2.5dp"
                     android:layout_weight="1"
-                    android:background="#FF5252"
+                    android:background="@drawable/custom_button"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/indam"
                         android:text="Tổng Tiền"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -149,6 +152,7 @@
                     <TextView
                         android:id="@+id/txtTongTienXuat"
                         android:layout_width="wrap_content"
+                        android:fontFamily="@font/indam"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
@@ -170,7 +174,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="2.5dp"
                     android:layout_weight="1"
-                    android:background="#FF5252"
+                    android:background="@drawable/custom_button"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -178,6 +182,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tổng số sản phẩm"
+                        android:fontFamily="@font/indam"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -185,6 +190,7 @@
                         android:id="@+id/txtSoSPXuat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/indam"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 
@@ -195,7 +201,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="2.5dp"
                     android:layout_weight="1"
-                    android:background="#B2FF59"
+                    android:background="@drawable/custom_button"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -204,6 +210,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tổng Tiền Thuế"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/indam"
                         android:textSize="18sp" />
 
                     <TextView
@@ -211,6 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/indam"
                         android:textSize="15sp" />
 
                 </LinearLayout>

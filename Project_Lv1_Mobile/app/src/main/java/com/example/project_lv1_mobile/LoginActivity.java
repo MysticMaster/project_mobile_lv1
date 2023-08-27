@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,9 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import android.widget.ProgressBar;
@@ -216,6 +220,12 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.item_forgot_password, null);
+        ViewGroup viewGroup=view.findViewById(R.id.LinearLayoutCha);
+        Animation  animation= AnimationUtils.loadAnimation(this,R.anim.xuat_hien_tu_tu);
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+           View child= viewGroup.getChildAt(i);
+            child.startAnimation(animation);
+        }
         builder.setView(view);
         Dialog dialogForgot = builder.create();
         dialogForgot.show();

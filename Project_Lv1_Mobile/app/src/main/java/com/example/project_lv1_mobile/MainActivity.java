@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         bundle = intent.getExtras();
         int rank = bundle.getInt("rank");
 
-
         toolBarMain = findViewById(R.id.toolBarMain);
         txtTitleToolBarMain = findViewById(R.id.txtTitleToolBarMain);
         iBtnTaiKhoan = findViewById(R.id.iBtnTaiKhoan);
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationViewMain.setItemIconTintList(null);
 
         iBtnTaiKhoan.setVisibility(View.VISIBLE);
-        txtTitleToolBarMain.setText("Trang Chủ");
+
 
         Button btnQLLoaiSP = findViewById(R.id.btnQLLoaiSP);
         Button btnQLSP = findViewById(R.id.btnQLSP);

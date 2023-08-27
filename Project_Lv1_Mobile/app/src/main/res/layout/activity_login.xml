@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#99C0C0C0"
+    android:background="@drawable/backgruodlogin2"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -25,10 +25,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/indam"
                 android:gravity="center"
                 android:text="Đăng Nhập Tài Khoản"
-                android:textColor="@color/black"
-                android:textSize="32sp"
+                android:textColor="@color/white"
+                android:textSize="38sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -88,10 +89,11 @@
 
                 <Button
                     android:id="@+id/btnLoginSubmit"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_button"
                     android:text="LOGIN"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:textSize="23sp" />
 
@@ -105,8 +107,9 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="Forgot password"
-                android:textColor="#33bb9f"
-                android:textSize="20sp" />
+                android:textColor="@color/white"
+                android:fontFamily="@font/indam"
+                android:textSize="25sp" />
 
         </LinearLayout>
 

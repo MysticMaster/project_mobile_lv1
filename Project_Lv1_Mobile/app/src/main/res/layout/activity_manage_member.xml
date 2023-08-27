@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/giaycologo"
     tools:context=".ManageMemberActivity">
 
     <ScrollView
@@ -38,7 +39,8 @@
                     android:layout_centerInParent="true"
                     android:letterSpacing="0.02"
                     android:text="Quản Lý Thành Viên"
-                    android:textColor="#36c5aa"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

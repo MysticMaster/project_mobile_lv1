@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="#C0C0C0"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -17,23 +16,29 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:text="Họ và tên:"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:fontFamily="@font/chuhoa"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/txtHo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:fontFamily="@font/chuhoa"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/txtTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textColor="@color/black"
+            android:fontFamily="@font/chuhoa"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
 
     </LinearLayout>
 
@@ -48,15 +53,19 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:text="Trạng thái:"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:fontFamily="@font/chuhoa"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp"/>
 
         <TextView
             android:id="@+id/txtTrangThai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:fontFamily="@font/chuhoa"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp"/>
 
     </LinearLayout>
 

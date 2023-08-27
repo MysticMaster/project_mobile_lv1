@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/giaytrangco"
     android:padding="10dp">
 
     <EditText
@@ -12,8 +13,9 @@
         android:layout_height="wrap_content"
         android:hint="Tên loại sản phẩm"
         android:padding="10dp"
+        android:fontFamily="@font/innghiengdam"
         android:textColor="@color/black"
-        android:textColorHint="#C0C0C0"
+        android:textColorHint="@color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -22,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Cập nhật"
+        android:fontFamily="@font/innghiengdam"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -32,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Đóng"
-        android:textColor="@color/black"
+        android:fontFamily="@font/innghiengdam"
+        android:textColor="#E12012"
         android:textSize="25sp"
         android:textStyle="bold" />
 

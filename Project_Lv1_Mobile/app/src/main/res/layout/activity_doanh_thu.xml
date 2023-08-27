@@ -11,12 +11,10 @@
         android:id="@+id/tabLayoutThongKe"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#448AFF"
-        app:tabIndicatorColor="#69F0AE"
         app:tabIndicatorHeight="50dp"
         app:tabRippleColor="@color/black"
         app:tabSelectedTextColor="#FF5252"
-        app:tabTextColor="@color/white" />
+        app:tabTextColor="@color/black" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2ThongKe"

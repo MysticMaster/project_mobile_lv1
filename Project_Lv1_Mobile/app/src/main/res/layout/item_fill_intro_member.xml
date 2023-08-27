@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6C0C0C0"
+    android:background="@drawable/giaytrangco"
     android:orientation="vertical">
 
     <ScrollView
@@ -23,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Thông tin nhân viên"
+                android:fontFamily="@font/indam"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="25dp" />
@@ -56,7 +57,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Họ và tên:"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -64,14 +66,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillTen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -87,14 +91,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Giới tính:"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillGioiTinh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -110,14 +116,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Email:"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillEmailMember"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -133,14 +141,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Chức vụ:"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thủ kho"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -156,14 +166,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Trạng thái:"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillTrangThai"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -183,8 +195,8 @@
                         android:id="@+id/txtDisable"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vô hiệu hóa"
-                        android:textColor="#536DFE"
+                        android:fontFamily="@font/indam"
+                        android:textColor="#E32214"
                         android:textSize="21sp"
                         android:textStyle="bold" />
 
@@ -193,7 +205,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kích hoạt"
-                        android:textColor="#536DFE"
+                        android:fontFamily="@font/indam"
+                        android:textColor="#13EC1C"
                         android:textSize="21sp"
                         android:textStyle="bold" />
 
@@ -208,7 +221,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:text="ĐÓNG"
-                    android:textColor="#536DFE"
+                    android:textColor="#DF2113"
+                    android:fontFamily="@font/indam"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 

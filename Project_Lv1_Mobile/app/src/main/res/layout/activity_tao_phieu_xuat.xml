@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/cuon2"
     android:padding="15dp"
     tools:context=".TaoPhieuXuatActivity">
 
@@ -13,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Phiếu Xuất"
+        android:fontFamily="@font/indam"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -35,14 +37,16 @@
                 android:layout_marginRight="5dp"
                 android:text="Mã số:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp" />
 
             <TextView
                 android:id="@+id/txtMaSoPhieuXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp" />
 
         </LinearLayout>
 
@@ -58,14 +62,16 @@
                 android:layout_marginRight="5dp"
                 android:text="Người tạo:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp" />
 
             <TextView
                 android:id="@+id/txtNguoiTaoPhieuXuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
         </LinearLayout>
 
@@ -81,14 +87,16 @@
                 android:layout_marginRight="5dp"
                 android:text="Ngày tạo:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
             <TextView
                 android:id="@+id/txtNgayXuatPhieu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp" />
 
         </LinearLayout>
 
@@ -104,14 +112,16 @@
                 android:layout_marginRight="5dp"
                 android:text="Tổng sản phẩm:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
             <TextView
                 android:id="@+id/txtTongSoSPXuatSub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
         </LinearLayout>
 
@@ -127,14 +137,16 @@
                 android:layout_marginRight="5dp"
                 android:text="Tổng tiền chưa thuế:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
             <TextView
                 android:id="@+id/txtTongTienXuatTruoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
         </LinearLayout>
 
@@ -144,7 +156,8 @@
             android:layout_marginTop="10dp"
             android:text="Thuế: 10%"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:fontFamily="@font/indam"
+            android:textSize="21sp"  />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -158,14 +171,16 @@
                 android:layout_marginRight="5dp"
                 android:text="Tổng tiền sau thuế:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp"  />
 
             <TextView
                 android:id="@+id/txtTongTienXuatSau"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:fontFamily="@font/indam"
+                android:textSize="21sp" />
 
         </LinearLayout>
 
@@ -190,8 +205,10 @@
             android:background="@drawable/custom_button"
             android:paddingHorizontal="10dp"
             android:text="Xác Nhận"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:fontFamily="@font/indam"
+            android:textSize="21sp"
+            android:textColor="@color/black"
+             />
 
     </FrameLayout>
 
@@ -202,7 +219,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_button"
         android:text="Hủy"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textColor="@color/black"
+        android:fontFamily="@font/indam"
+        android:textSize="21sp"  />
 
 </LinearLayout>

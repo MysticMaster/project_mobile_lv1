@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4DC0C0C0"
+    android:background="@drawable/giaytrangco"
     android:orientation="vertical"
     tools:context=".ChonSPNhapXuatActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#448AFF"
         android:paddingHorizontal="5dp">
 
         <ImageButton
@@ -20,7 +19,6 @@
             android:layout_height="35dp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
-            android:background="#448AFF"
             android:scaleType="fitXY"
             android:src="@drawable/toolbar_back_icon" />
 
@@ -42,22 +40,11 @@
                 android:id="@+id/seachView"
                 android:layout_width="230dp"
                 android:layout_height="40dp"
-                android:background="@color/white"
                 android:padding="2dp"
                 android:visibility="invisible" />
 
         </FrameLayout>
 
-
-        <ImageButton
-            android:id="@+id/iBtnLoc"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:background="#448AFF"
-            android:scaleType="fitXY"
-            android:src="@drawable/filter" />
 
     </RelativeLayout>
 

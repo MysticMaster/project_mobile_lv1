@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C0C0C0"
+    android:background="@drawable/giaytrangco"
     android:orientation="vertical">
 
     <ScrollView
@@ -191,7 +191,8 @@
                     android:background="@drawable/custom_button"
                     android:paddingHorizontal="70dp"
                     android:text="Tạo"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/indam"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </FrameLayout>
@@ -202,8 +203,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="ĐÓNG"
-                android:textColor="@color/white"
+                android:textColor="#E40C0C"
                 android:textSize="23sp"
+                android:fontFamily="@font/indam"
                 android:textStyle="bold" />
         </LinearLayout>
 
