@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6ECCD96"
+    android:background="#66C0C0C0"
     android:orientation="vertical">
 
     <ScrollView
+        android:layout_marginVertical="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
@@ -15,24 +16,24 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="40dp">
+            android:paddingHorizontal="10dp">
 
             <TextView
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Thông tin nhân viên"
                 android:textAllCaps="true"
-                android:textColor="@color/white"
+                android:textColor="#36c5aa"
                 android:textStyle="bold"
-                android:textSize="28dp" />
+                android:textSize="22dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="2dp">
 
                 <ImageView
@@ -47,7 +48,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -55,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Họ và tên:"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
                 <TextView
@@ -63,14 +64,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillTen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -86,14 +87,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Giới tính:"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillGioiTinh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -109,14 +110,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Email:"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillEmailMember"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -132,14 +133,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Chức vụ:"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thủ kho"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -155,14 +156,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Trạng thái:"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtFillTrangThai"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -183,7 +184,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Vô hiệu hóa"
-                        android:textColor="@color/white"
+                        android:textColor="#36c5aa"
                         android:textSize="23sp"
                         android:textStyle="bold" />
 
@@ -192,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kích hoạt"
-                        android:textColor="@color/white"
+                        android:textColor="#36c5aa"
                         android:textSize="23sp"
                         android:textStyle="bold" />
 
@@ -207,7 +208,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:text="ĐÓNG"
-                    android:textColor="@color/white"
+                    android:textColor="#36c5aa"
                     android:textSize="23sp"
                     android:textStyle="bold" />
 
@@ -217,6 +218,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>

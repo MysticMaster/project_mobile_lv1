@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6ECCD96"
+    android:background="#66C0C0C0"
     android:orientation="vertical"
     tools:context=".ManageMemberActivity">
 
@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:background="@color/white"
+                android:background="#36c5aa"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
@@ -40,8 +40,8 @@
                     android:layout_centerInParent="true"
                     android:letterSpacing="0.02"
                     android:text="Quản Lý Thành Viên"
-                    android:textColor="#36c5aa"
-                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

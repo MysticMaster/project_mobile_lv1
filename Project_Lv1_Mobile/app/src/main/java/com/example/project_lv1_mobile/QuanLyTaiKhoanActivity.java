@@ -298,7 +298,7 @@ public class QuanLyTaiKhoanActivity extends AppCompatActivity {
                 Boolean checkPassOld = true;
                 if (txtIEdtPassOld.getText().toString().trim().isEmpty()) {
 
-                    txtILayoutPassOld.setHelperText("Hãy nhập mật khẩu xác thực");
+                    txtILayoutPassOld.setHelperText("Nhập mật khẩu tài khoản");
                     checkPassOld = false;
                 }
 
@@ -326,17 +326,17 @@ public class QuanLyTaiKhoanActivity extends AppCompatActivity {
                                         Boolean checkPassNewCon = true;
 
                                         if (txtIEdtPassNew.getText().toString().trim().isEmpty()) {
-                                            txtILayoutPassNew.setHelperText("Trống mật khẩu");
+                                            txtILayoutPassNew.setHelperText("Nhập mật khẩu mới");
                                             checkPassNew = false;
                                         } else if (txtIEdtPassNew.getText().toString().trim().length() <= 8) {
-                                            txtILayoutPassNew.setHelperText("Mật khẩu ngắn");
+                                            txtILayoutPassNew.setHelperText("Mật khẩu quá ngắn");
                                             checkPassNew = false;
                                         }
 
                                         if (txtIEdtPassNewCon.getText().toString().trim().equals(txtIEdtPassNew.getText().toString().trim())) {
 
                                         } else {
-                                            txtILayoutPassNewCon.setHelperText("Mật khẩu không khớp");
+                                            txtILayoutPassNewCon.setHelperText("Xác nhận không khớp");
                                             checkPassNewCon = false;
                                         }
 
@@ -357,7 +357,7 @@ public class QuanLyTaiKhoanActivity extends AppCompatActivity {
                                                             startActivity(new Intent(QuanLyTaiKhoanActivity.this, LoginActivity.class));
                                                             finish();
                                                         } else {
-                                                            Toast.makeText(QuanLyTaiKhoanActivity.this, "Lỗi mạng", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(QuanLyTaiKhoanActivity.this, "Lỗi mạng! Vui lòng thử lại", Toast.LENGTH_SHORT).show();
                                                             progressBarXacNhan.setVisibility(View.VISIBLE);
                                                             btnXacNhan.setVisibility(View.INVISIBLE);
                                                         }
@@ -367,7 +367,7 @@ public class QuanLyTaiKhoanActivity extends AppCompatActivity {
                                 });
 
                             } else {
-                                Toast.makeText(context, "Lỗi xác thực", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Mật khẩu không đúng", Toast.LENGTH_SHORT).show();
                                 progressBarXacThuc.setVisibility(View.INVISIBLE);
                                 btnXacThuc.setVisibility(View.VISIBLE);
                             }

@@ -21,7 +21,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,7 +35,6 @@ import android.widget.Toast;
 
 import com.example.project_lv1_mobile.adapter.SpinnerTypeAdapter;
 import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
-import com.example.project_lv1_mobile.fragment.FragmentAllProduct;
 import com.example.project_lv1_mobile.fragment.FragmentKinhDoanh;
 import com.example.project_lv1_mobile.fragment.FragmentNgungKinhDoanh;
 import com.example.project_lv1_mobile.model.Product;
@@ -142,10 +140,6 @@ public class ProductActivity extends AppCompatActivity {
                     FragmentNgungKinhDoanh ngungKinhDoanh = new FragmentNgungKinhDoanh();
                     ngungKinhDoanh.setArguments(bundle);
                     rePlaceFrag(ngungKinhDoanh);
-                } else if (item.getItemId() == R.id.itemTatCa) {
-                    FragmentAllProduct allProduct = new FragmentAllProduct();
-                    allProduct.setArguments(bundle);
-                    rePlaceFrag(allProduct);
                 }
 
                 return false;

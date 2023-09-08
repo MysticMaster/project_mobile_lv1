@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.project_lv1_mobile.R;
+import com.example.project_lv1_mobile.TaoPhieuXuatActivity;
+import com.example.project_lv1_mobile.XuatActivity;
 import com.example.project_lv1_mobile.firebase.FirebaseCRUD;
 import com.example.project_lv1_mobile.model.Member;
+import com.example.project_lv1_mobile.model.PhieuXuat;
+import com.example.project_lv1_mobile.model.PhieuXuatChiTiet;
 import com.example.project_lv1_mobile.model.Product;
 import com.example.project_lv1_mobile.model.ProductType;
 import com.google.firebase.firestore.DocumentReference;
@@ -56,6 +61,16 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
         holder.txtNameType.setText(productTypeList.get(position).getNameProductType());
 
         Glide.with(context).load(productTypeList.get(position).getTypeImageUri()).into(holder.ivImageType);
+        ProductType productType = productTypeList.get(position);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openDialogUpdateProduct(productType);
+            }
+        });
+
 
     }
 
@@ -73,15 +88,6 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
             super(itemView);
             txtNameType = itemView.findViewById(R.id.txtNameType);
             ivImageType = itemView.findViewById(R.id.ivImageType);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ProductType productType = productTypeList.get(getAdapterPosition());
-
-                    openDialogUpdateProduct(productType);
-                }
-            });
         }
     }
 

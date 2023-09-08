@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCECCD96">
+    android:background="#66C0C0C0">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:id="@+id/toolBarMain"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/white"
+            android:background="#36c5aa"
             android:fitsSystemWindows="true"
             app:menu="@menu/menu_toolbar_main"
             app:title="@null">
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:letterSpacing="0.02"
-                android:textColor="#36c5aa"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="left"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:scaleType="fitXY"
                 android:src="@drawable/user"
                 android:visibility="gone" />

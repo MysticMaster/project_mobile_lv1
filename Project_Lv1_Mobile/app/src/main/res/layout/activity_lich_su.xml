@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E6ECCD96"
+    android:background="#66C0C0C0"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".LichSuActivity">
@@ -13,10 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#448AFF"
-        app:tabIndicatorColor="#69F0AE"
+        app:tabIndicatorColor="@color/white"
         app:tabIndicatorHeight="50dp"
         app:tabRippleColor="@color/black"
-        app:tabSelectedTextColor="#FF5252"
+        app:tabSelectedTextColor="#448AFF"
         app:tabTextColor="@color/white" />
 
     <androidx.viewpager2.widget.ViewPager2

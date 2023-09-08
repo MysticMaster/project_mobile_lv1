@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E6ECCD96"
+    android:background="#66C0C0C0"
     android:layout_height="match_parent"
     tools:context=".ProductActivity">
 
@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:background="@color/white"
+            android:background="#36c5aa"
             android:id="@+id/rlQLSP"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -35,7 +35,7 @@
                 android:layout_centerInParent="true"
                 android:letterSpacing="0.02"
                 android:text="Quản Lý Sản Phẩm"
-                android:textColor="#36c5aa"
+                android:textColor="@color/white"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 

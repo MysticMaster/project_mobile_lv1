@@ -77,6 +77,50 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.txtSLConLai.setText(Integer.toString(productList.get(position).getQuantity()));
 
         Glide.with(context).load(productList.get(position).getProductImageUri()).into(holder.ivImageProduct);
+
+        Product product = productList.get(position);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(((Activity) context), IntroProductActivity.class);
+                bundle.putString("idProduct", product.getIdProduct());
+                intent.putExtras(bundle);
+                ((Activity) context).startActivity(intent);
+                ((Activity) context).finish();
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Cảnh báo");
+                builder.setMessage("Sau khi xóa không thể khôi phục! Tiếp tục?");
+
+                builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        product.setStatus(2);
+                        FirebaseCRUD crud = new FirebaseCRUD(FirebaseFirestore.getInstance(),context);
+                        crud.updateProduct(product);
+                        notifyDataSetChanged();
+                    }
+                });
+
+                builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                return false;
+            }
+        });
     }
 
     @Override
@@ -99,18 +143,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             iBtnAddSPChon = itemView.findViewById(R.id.iBtnAddSPChon);
 
             iBtnAddSPChon.setVisibility(View.GONE);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(((Activity) context), IntroProductActivity.class);
-                    bundle.putString("idProduct", productList.get(getAdapterPosition()).getIdProduct());
-                    intent.putExtras(bundle);
-                    ((Activity) context).startActivity(intent);
-                    ((Activity) context).finish();
-                }
-            });
-
         }
     }
 }

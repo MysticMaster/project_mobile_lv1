@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#E6ECCD96"
+    android:background="#66C0C0C0"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingHorizontal="15dp"
@@ -28,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:text="Tạo phiếu thành công"
-        android:textColor="@color/white"
+        android:textColor="#36c5aa"
         android:textSize="23sp" />
 
     <Button
@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textSize="19sp"
+        android:textSize="18sp"
         android:background="@drawable/custom_button"
-        android:paddingHorizontal="21dp"
+        android:paddingHorizontal="30dp"
         android:text="Quay về trang chủ"
         android:textColor="@color/white" />
 

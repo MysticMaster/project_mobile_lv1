@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#E6ECCD96"
+    android:layout_height="match_parent"
+    android:background="#66C0C0C0"
     android:orientation="vertical"
     android:paddingHorizontal="10dp"
-    android:paddingVertical="50dp">
+    android:paddingVertical="20dp">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Thêm loại sản phẩm"
-        android:textColor="@color/white"
+        android:textColor="#36c5aa"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -48,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:paddingHorizontal="5dp">
 
         <TextView
@@ -57,7 +59,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:text="ĐÓNG"
-            android:textColor="@color/white"
+            android:textColor="#36c5aa"
             android:textSize="23sp"
             android:textStyle="bold" />
 
@@ -81,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_button"
-                android:paddingHorizontal="40dp"
+                android:paddingHorizontal="50dp"
                 android:text="Thêm"
                 android:textColor="@color/white"
                 android:textSize="18sp" />

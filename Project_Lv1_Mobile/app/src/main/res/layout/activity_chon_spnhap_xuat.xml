@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2ECCD96"
+    android:background="#66C0C0C0"
     android:orientation="vertical"
     tools:context=".ChonSPNhapXuatActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#F2448AFF"
+        android:background="#36c5aa"
         android:paddingHorizontal="5dp">
 
         <ImageButton

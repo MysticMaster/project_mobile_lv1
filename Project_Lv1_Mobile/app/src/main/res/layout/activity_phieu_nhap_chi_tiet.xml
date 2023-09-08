@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6ECCD96"
+    android:background="#66C0C0C0"
     android:orientation="vertical"
     tools:context=".PhieuNhapChiTietActivity">
 
     <RelativeLayout
-        android:background="@color/white"
+        android:background="#36c5aa"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="15dp"
-            android:textColor="#36c5aa"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 

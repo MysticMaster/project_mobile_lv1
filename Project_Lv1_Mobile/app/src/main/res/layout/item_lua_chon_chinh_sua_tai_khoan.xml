@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:background="#F2ECCD96"
+    android:background="#66C0C0C0"
     android:orientation="vertical"
     android:paddingVertical="50dp">
 
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="ĐÓNG"
-        android:textColor="@color/white"
+        android:textColor="#36c5aa"
         android:textSize="26sp"
         android:textStyle="bold" />
 
