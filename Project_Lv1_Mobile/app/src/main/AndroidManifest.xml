@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/logo_icon"
+        android:icon="@drawable/ic_wareflow"
         android:label="WareFlow"
-        android:roundIcon="@mipmap/logo_icon"
+        android:roundIcon="@drawable/ic_wareflow"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Lv1_Mobile"
         tools:targetApi="31">

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:background="#66C0C0C0"
     android:gravity="center"
     android:orientation="vertical"
@@ -12,33 +11,9 @@
     tools:context=".WelcomeActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="110dp"
-        android:layout_marginHorizontal="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/fpt_logo" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="WareFlow"
-        android:textColor="#D90066B2"
-        android:textSize="40sp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:text="Welcome my valued customers"
-        android:textColor="#D90DB04B"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:src="@drawable/wareflow" />
 
 </LinearLayout>
