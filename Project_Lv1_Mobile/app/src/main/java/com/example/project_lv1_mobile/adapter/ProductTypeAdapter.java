@@ -66,11 +66,40 @@ public class ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openDialogUpdateProduct(productType);
             }
         });
 
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Cảnh báo");
+                builder.setMessage("Sau khi xóa không thể khôi phục! Tiếp tục?");
+
+                builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        productType.setTypeStatus(1);
+                        FirebaseCRUD crud = new FirebaseCRUD(FirebaseFirestore.getInstance(),context);
+                        crud.updateType(productType);
+                        notifyDataSetChanged();
+                        ((Activity)context).recreate();
+                    }
+                });
+
+                builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                return false;
+            }
+        });
 
     }
 

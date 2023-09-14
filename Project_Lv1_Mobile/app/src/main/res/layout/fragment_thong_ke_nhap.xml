@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:text="Đã Nhập"
                         android:textColor="#36c5aa"
-                        android:textSize="20sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -146,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tổng Tiền"
                         android:textColor="#36c5aa"
-                        android:textSize="20sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -180,9 +180,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tổng số sản phẩm"
+                        android:text="Chưa có dữ liệu"
                         android:textColor="#36c5aa"
-                        android:textSize="20sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -208,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:text="Chưa có dữ liệu"
                         android:textColor="#36c5aa"
-                        android:textSize="20sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView

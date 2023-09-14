@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="3dp"
+    android:paddingVertical="1dp"
     android:background="@drawable/custom_layout">
 
     <ImageView
@@ -16,7 +17,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/ivImageSPChonXuat"
         android:orientation="vertical"
@@ -30,36 +31,99 @@
             android:textColor="@color/black"
             android:textSize="10sp" />
 
-        <TextView
-            android:id="@+id/txtTonKhoSPChonXuat"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtGiaSPChonXuat"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Còn"
+                android:layout_marginRight="3dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txtTonKhoSPChonXuat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtSoLuongSPChonXuat"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Đơn giá"
+                android:layout_marginRight="3dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txtGiaSPChonXuat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtTongTienSPChonXuat"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Số lượng"
+                android:layout_marginRight="3dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txtSoLuongSPChonXuat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Tổng tiền"
+                android:layout_marginRight="3dp"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txtTongTienSPChonXuat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

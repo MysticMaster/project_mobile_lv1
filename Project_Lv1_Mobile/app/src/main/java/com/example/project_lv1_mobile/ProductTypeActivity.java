@@ -159,7 +159,9 @@ public class ProductTypeActivity extends AppCompatActivity {
                                 productTypeList.clear();
                                 for (DocumentSnapshot snapshot : value.getDocuments()) {
                                     ProductType type = snapshot.toObject(ProductType.class);
-                                    productTypeList.add(type);
+                                    if (type.getTypeStatus() == 0){
+                                        productTypeList.add(type);
+                                    }
                                 }
                                 adapter.notifyDataSetChanged();
                                 break;
@@ -227,7 +229,7 @@ public class ProductTypeActivity extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
                                 String imageType = uri.toString();
 
-                                ProductType type = new ProductType(idType, typeName, imageType);
+                                ProductType type = new ProductType(idType, typeName, imageType, 0);
                                 crud.addProductType(type);
                                 adapter.notifyDataSetChanged();
                                 dialog.dismiss();

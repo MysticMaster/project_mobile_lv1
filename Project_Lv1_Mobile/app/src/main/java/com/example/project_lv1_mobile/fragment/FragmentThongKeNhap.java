@@ -151,19 +151,16 @@ public class FragmentThongKeNhap extends Fragment {
 
                                 int demDaNhap = 0;
                                 int demTienNhap = 0;
-                                int demSoSP = 0;
 
 
                                 for (PhieuNhap pn : phieuNhapList){
                                     demDaNhap++;
                                     demTienNhap += pn.getTongTien();
-                                    demSoSP += pn.getTongSoSPNhap();
 
                                 }
 
                                 txtDaNhap.setText(Integer.toString(demDaNhap));
                                 txtTongTienNhap.setText(Integer.toString(demTienNhap));
-                                txtSoSPNhap.setText(Integer.toString(demSoSP));
 
                         }
                     }

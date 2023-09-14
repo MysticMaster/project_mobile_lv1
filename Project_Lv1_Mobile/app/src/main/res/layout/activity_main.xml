@@ -58,13 +58,13 @@
             android:layout_marginHorizontal="5dp"
             android:layout_marginBottom="55dp"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:paddingTop="5dp">
 
 
             <Button
                 android:id="@+id/btnQLLoaiSP"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:layout_marginVertical="2.5dp"
                 android:background="@drawable/custom_item_home"
                 android:drawableLeft="@drawable/type"
@@ -77,7 +77,7 @@
             <Button
                 android:id="@+id/btnQLSP"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:layout_marginVertical="2.5dp"
                 android:background="@drawable/custom_item_home"
                 android:drawableLeft="@drawable/product"
@@ -91,7 +91,7 @@
             <Button
                 android:id="@+id/btnQLTV"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:layout_marginVertical="2.5dp"
                 android:background="@drawable/custom_item_home"
                 android:drawableLeft="@drawable/add_people_icon"

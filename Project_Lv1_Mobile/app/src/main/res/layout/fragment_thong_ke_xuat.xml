@@ -124,7 +124,7 @@
                         android:text="Đã Xuất"
                         android:textColor="#36c5aa"
                         android:textStyle="bold"
-                        android:textSize="20sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/txtDaXuat"
@@ -150,7 +150,7 @@
                         android:text="Tổng Tiền"
                         android:textColor="#36c5aa"
                         android:textStyle="bold"
-                        android:textSize="20sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/txtTongTienXuat"
@@ -183,10 +183,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tổng số sản phẩm"
+                        android:text="Chưa có dữ liệu"
                         android:textStyle="bold"
                         android:textColor="#36c5aa"
-                        android:textSize="20sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/txtSoSPXuat"
@@ -212,7 +212,7 @@
                         android:text="Tổng Tiền Thuế"
                         android:textStyle="bold"
                         android:textColor="#36c5aa"
-                        android:textSize="20sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/txtTongTienThue"

@@ -150,19 +150,16 @@ public class FragmentThongKeXuat extends Fragment {
 
                                 int demDaXuat = 0;
                                 int demTienXuat = 0;
-                                int demSoSP = 0;
                                 int demThue = 0;
 
                                 for (PhieuXuat px : phieuXuatList){
                                     demDaXuat++;
                                     demTienXuat += px.getTongTien();
-                                    demSoSP += px.getTongSoSPXuat();
                                     demThue += px.getThue();
                                 }
 
                                 txtDaXuat.setText(Integer.toString(demDaXuat));
                                 txtTongTienXuat.setText(Integer.toString(demTienXuat));
-                                txtSoSPXuat.setText(Integer.toString(demSoSP));
                                 txtTongTienThue.setText(Integer.toString(demThue));
                         }
                     }
