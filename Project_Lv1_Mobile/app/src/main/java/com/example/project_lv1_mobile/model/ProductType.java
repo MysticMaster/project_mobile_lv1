@@ -6,14 +6,15 @@ import java.util.HashMap;
 public class ProductType implements Serializable {
 
     private String idType, nameProductType, typeImageUri;
-
+    private int typeStatus;
     public ProductType() {
     }
 
-    public ProductType(String idType, String nameProductType, String typeImageUri) {
+    public ProductType(String idType, String nameProductType, String typeImageUri, int typeStatus) {
         this.idType = idType;
         this.nameProductType = nameProductType;
         this.typeImageUri = typeImageUri;
+        this.typeStatus = typeStatus;
     }
 
     public String getIdType() {
@@ -43,11 +44,21 @@ public class ProductType implements Serializable {
         return this;
     }
 
+    public int getTypeStatus() {
+        return typeStatus;
+    }
+
+    public ProductType setTypeStatus(int typeStatus) {
+        this.typeStatus = typeStatus;
+        return this;
+    }
+
     public HashMap<String, Object> objectType() {
         HashMap<String, Object> data = new HashMap<>();
         data.put("idType", this.idType);
         data.put("nameProductType", this.nameProductType);
         data.put("typeImageUri", this.typeImageUri);
+        data.put("typeStatus", this.typeStatus);
 
         return data;
     }

@@ -182,7 +182,9 @@ public class ProductActivity extends AppCompatActivity {
                                 productTypeList.clear();
                                 for (DocumentSnapshot snapshot : value.getDocuments()) {
                                     ProductType type = snapshot.toObject(ProductType.class);
-                                    productTypeList.add(type);
+                                    if (type.getTypeStatus() == 0) {
+                                        productTypeList.add(type);
+                                    }
                                 }
                                 spinnerTypeAdapter.notifyDataSetChanged();
                                 break;

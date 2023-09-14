@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="Thêm loại sản phẩm"
         android:textColor="#36c5aa"
-        android:textSize="30dp"
+        android:textSize="28dp"
         android:textStyle="bold" />
 
 
@@ -23,8 +23,7 @@
         android:layout_width="220dp"
         android:layout_height="260dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
         android:scaleType="fitXY"
         android:src="@drawable/photo_icon" />
